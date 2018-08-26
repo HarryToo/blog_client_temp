@@ -1,0 +1,16 @@
+{{extend '../layout'}}
+
+{{block 'description'}}首页{{/block}}
+
+{{block 'main'}}
+<div class="row">
+    <section class="col-xs-12 col-sm-9 left_cont">
+        <div class="radius">
+            {{include '../components/banner' banner}}
+        </div>
+    </section>
+    <section class="hidden-xs col-sm-3 right_cont">
+        右侧栏
+    </section>
+</div>
+{{/block}}

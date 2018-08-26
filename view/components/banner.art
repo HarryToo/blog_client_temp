@@ -53,10 +53,10 @@
         pagination: '.swiper-pagination',
         paginationClickable: true,
         loop: true,
-        // autoplay: {
-        //     delay: 3000,
-        //     disableOnInteraction: false,
-        // }
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        }
     });
 </script>
 {{/if}}

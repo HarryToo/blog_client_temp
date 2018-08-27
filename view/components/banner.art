@@ -1,46 +1,10 @@
 {{if $data.length}}
-<style>
-    .banner {
-        width: 100%;
-        height: 26vh;
-    }
-
-    .banner .swiper-slide a {
-        position: relative;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
-
-    .banner .swiper-slide a .title {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 10px;
-        color: #333;
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    @media (max-width: 767px) {
-        .banner {
-            height: 240px;
-        }
-    }
-</style>
-
-<div class="swiper-container banner">
+<div class="swiper-container radius banner">
     <div class="swiper-wrapper">
         {{each}}
         <article class="swiper-slide">
             <a href="#" title="{{$value.title}}" style="background-image: url('http://image.doinblog.com/{{$value.cover}}-banner')">
-                <div class="title text-overflow">{{$value.title}}</div>
+                <header class="title text-overflow">{{$value.title}}</header>
             </a>
         </article>
         {{/each}}
@@ -50,12 +14,13 @@
 
 <script>
     var swiper = new Swiper('.banner', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
         loop: true,
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
         }
     });
 </script>

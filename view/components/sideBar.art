@@ -1,0 +1,31 @@
+<div class="side_bar">
+    <div class="radius column business_card">
+        <div class="bg" style="background-image: url('http://image.doinblog.com/{{businessCard.portrait}}')"></div>
+        <div class="portrait" style="background-image: url('http://image.doinblog.com/{{businessCard.portrait}}')"></div>
+        <div class="cont">
+            <p class="h4 nickname" data-v-792741ab="">{{businessCard.nickname}}</p>
+            <p class="self_intro" data-v-792741ab="">{{businessCard.self_intro}}</p>
+            <div class="statistics_list">
+                <div>
+                    <p class="h4 num">{{businessCard.articleTotal}}</p>
+                    <p class="column">文章</p>
+                </div>
+                <div>
+                    <p class="h4 num">{{businessCard.labelTotal}}</p>
+                    <p class="column">标签</p>
+                </div>
+            </div>
+            <p class="contact">
+                <a href="https://github.com/duhang666" target="_blank" title="最大交友网"><i class="iconfont icon-github"></i></a>
+                <a href="tencent://message/?uin=840261937&Site=&Menu-=yes" title="企鹅"><i class="iconfont icon-qq"></i></a>
+            </p>
+        </div>
+    </div>
+    {{if banner.length}}
+    <div class="radius column top_article_list">
+        {{each banner}}
+        {{include '../components/articleItem' $value}}
+        {{/each}}
+    </div>
+    {{/if}}
+</div>

@@ -1,16 +1,19 @@
 {{extend '../layout'}}
 
 {{block 'description'}}首页{{/block}}
+{{block 'head'}}
+<script type="text/javascript" src="./js/swiper-4.3.5.min.js"></script>
+<link rel="stylesheet" href="./css/swiper-4.3.5.min.css">
+<link rel="stylesheet" href="./css/index.css">
+{{/block}}
 
 {{block 'main'}}
-<div class="row">
-    <section class="col-xs-12 col-sm-9 left_cont">
-        <div class="radius">
-            {{include '../components/banner' banner}}
-        </div>
-    </section>
-    <section class="hidden-xs col-sm-3 right_cont">
-        右侧栏
-    </section>
+{{include '../components/banner' banner}}
+{{if articleList.length}}
+<div class="radius article_list">
+    {{each articleList}}
+    {{include '../components/articleItem' $value}}
+    {{/each}}
 </div>
+{{/if}}
 {{/block}}

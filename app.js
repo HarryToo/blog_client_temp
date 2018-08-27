@@ -12,7 +12,6 @@ app.use(static(
 
 render(app, {
     root: path.join(__dirname, 'view'),
-    extname: '.art',
     debug: process.env.NODE_ENV !== 'production'
 });
 

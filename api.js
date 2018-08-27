@@ -27,5 +27,32 @@ module.exports = {
             banner = data;
         }
         return banner;
+    },
+    // 获取文章列表数据
+    async getArticleListData() {
+        let articleList = [];
+        let {code, data} = await axios.get('/api/article/getArticleList');
+        if (code === 200) {
+            articleList = data;
+        }
+        return articleList;
+    },
+    // 获取文章总数
+    async getArticleTotal() {
+        let articleTotal = 0;
+        let {code, data} = await axios.get('/api/article/getArticleTotal');
+        if (code === 200) {
+            articleTotal = data;
+        }
+        return articleTotal;
+    },
+    // 获取标签总数
+    async getLabelTotal() {
+        let labelTotal = 0;
+        let {code, data} = await axios.get('/api/label/getLabelTotal');
+        if (code === 200) {
+            labelTotal = data;
+        }
+        return labelTotal;
     }
 };

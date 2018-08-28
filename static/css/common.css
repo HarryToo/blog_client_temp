@@ -28,10 +28,6 @@ body {
     }
 }
 
-main {
-    padding-bottom: 15px;
-}
-
 @media (max-width: 767px) {
     main .left_cont {
         padding-left: 0;
@@ -39,8 +35,22 @@ main {
     }
 
     main .left_cont > .radius {
+        border: none;
         border-radius: 0;
     }
+}
+
+.pager li > a {
+    color: #555;
+}
+
+.pager li > a:hover {
+    color: #41b883;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pager .disabled > a {
+    opacity: 0.5;
 }
 
 .empty {
@@ -58,6 +68,12 @@ main {
     background: rgba(255, 255, 255, 0.95);
 }
 
+@media (max-width: 767px) {
+    .navbar-default {
+        background: rgba(255, 255, 255, 0.97);
+    }
+}
+
 .navbar-brand {
     width: 100px;
     background-repeat: no-repeat;
@@ -67,6 +83,10 @@ main {
 
 .navbar-brand img {
     height: 100%;
+}
+
+.navbar-default .navbar-nav > li {
+    border-bottom: 1px solid rgba(43, 123, 88, 0.06);
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -107,8 +127,18 @@ main {
 input.form-control {
     min-width: 240px;
     -webkit-appearance: none;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.8);
     border-color: #eee;
+}
+
+@media (max-width: 767px) {
+    .navbar-form {
+        margin-top: 0;
+    }
+
+    .form-group-sm .form-control {
+        height: 38px;
+    }
 }
 
 .form-control:focus {

@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="DoinBlog, 杜航, 前端博客, {{block 'description'}}{{/block}}">
-    <title>{{block 'title'}}DoinBlog{{/block}}</title>
+    <meta name="description" content="DoinBlog, 杜航, 前端博客, {{block 'title'}}{{/block}}">
+    <title>{{block 'title'}}{{/block}}</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_648952_c79r1mcii6.css">
     <link rel="stylesheet" href="./css/reuse.css">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_648952_c79r1mcii6.css">
     <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     {{block 'head'}}{{/block}}
 </head>
 <body>
-{{include './components/header' log}}
+<div id="backdrop" style="background-image: url('http://image.doinblog.com/{{individuation.backdrop}}')"></div>
+{{include './components/header' individuation.logo}}
 <main>
     <div class="container">
         <div class="row">
-            <section class="col-xs-12 col-sm-8 left_cont">
+            <section class="col-xs-12 col-sm-8 animated fadeInLeft left_cont">
                 {{block 'main'}}{{/block}}
             </section>
-            <section class="hidden-xs col-sm-4 right_cont">
+            <section class="hidden-xs col-sm-4 animated fadeInRight right_cont">
                 {{include './components/sideBar' sideBar}}
             </section>
         </div>

@@ -16,20 +16,43 @@
     background-size: cover;
 }
 
-.banner .swiper-slide a .title {
+.banner .swiper-slide a header {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 5px 10px;
-    color: #333;
+    height: 32px;
+}
+
+.banner .swiper-slide a header .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 0 10px;
     text-align: center;
-    background-color: rgba(200, 240, 220, 0.4);
+    line-height: 32px;
+    color: #444;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.banner .swiper-slide a header .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center 4px;
+    background-size: 100% 50px;
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-    bottom: 38px;
-    padding-right: 10px;
+    bottom: 36px;
+    padding-right: 6px;
     text-align: right;
 }
 
@@ -38,7 +61,7 @@
     height: 2px;
     border-radius: 0;
     background: #fff;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .swiper-pagination-bullet-active {
@@ -48,79 +71,5 @@
 @media (max-width: 991px) {
     .banner {
         height: 240px;
-    }
-}
-
-/*article_list*/
-.article_list {
-    margin-top: 15px;
-}
-
-@media (max-width: 767px) {
-    .article_list {
-        margin-top: 0;
-        border-top: none;
-    }
-}
-
-.article_item {
-    display: block;
-    height: 140px;
-    border-bottom: 1px solid #eee;
-    transition: 0.4s;
-}
-
-.article_item:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
-}
-
-.article_item article {
-    height: 100%;
-    padding: 10px;
-}
-
-.article_item:last-of-type {
-    border-bottom: none;
-}
-
-.article_item .cover {
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-
-.article_item .text {
-    height: 100%;
-}
-
-.article_item .text header .title {
-    color: #555;
-    transition: 0.4s;
-}
-
-.article_item:hover .text header .title {
-    color: #41b883;
-}
-
-.article_item .text header .brief {
-    color: #777;
-}
-
-.article_item .text .info {
-    color: #999;
-}
-
-.article_item .text .info small {
-    padding-right: 15px;
-}
-
-.article_item .text .info .iconfont {
-    font-size: 12px;
-}
-
-@media (max-width: 991px) {
-    .article_item {
-        height: 100px;
     }
 }

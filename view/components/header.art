@@ -8,17 +8,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/" style="background-image: url('http://image.doinblog.com/{{logo}}-blog_logo')"></a>
+            <a class="navbar-brand" href="/" style="background-image: url('http://image.doinblog.com/{{$data}}-blog_logo')"></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="navbar-form form-inline navbar-right">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="搜索文章">
-                </div>
-            </div>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/">首页</a>
+                </li>
+                <li>
+                    <a href="/archive">归档</a>
                 </li>
                 <li>
                     <a href="#">标签</a>
@@ -30,6 +28,11 @@
                     <a href="#">关于</a>
                 </li>
             </ul>
+            <div class="navbar-form navbar-right">
+                <div class="form-group form-group-sm">
+                    <input type="text" class="form-control" placeholder="搜索文章">
+                </div>
+            </div>
         </div>
     </div>
 </nav>

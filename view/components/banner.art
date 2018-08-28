@@ -4,7 +4,10 @@
         {{each}}
         <article class="swiper-slide">
             <a href="#" title="{{$value.title}}" style="background-image: url('http://image.doinblog.com/{{$value.cover}}-banner')">
-                <header class="title text-overflow">{{$value.title}}</header>
+                <header>
+                    <div class="title text-overflow">{{$value.title}}</div>
+                    <div class="bg" style="background-image: url('http://image.doinblog.com/{{$value.cover}}-banner')"></div>
+                </header>
             </a>
         </article>
         {{/each}}
@@ -15,10 +18,10 @@
 <script>
     var swiper = new Swiper('.banner', {
         loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 3000,
+        //     disableOnInteraction: false,
+        // },
         pagination: {
             el: '.swiper-pagination',
         }

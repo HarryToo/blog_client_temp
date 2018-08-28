@@ -1,6 +1,6 @@
 {{extend '../layout'}}
 
-{{block 'description'}}首页{{/block}}
+{{block 'title'}}DoinBlog{{/block}}
 {{block 'head'}}
 <script type="text/javascript" src="./js/swiper-4.3.5.min.js"></script>
 <link rel="stylesheet" href="./css/swiper-4.3.5.min.css">

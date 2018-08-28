@@ -1,10 +1,17 @@
-<a href="#" class="article_item container-fluid">
+<a href="#" class="article_item translucent container-fluid">
     <article class="row">
-        <div class="cover radius col-xs-4 col-sm-3" title="{{title}}" style="background-image: url('http://image.doinblog.com/{{cover}}-articleListCover')"></div>
+        {{if cover.length}}
+        <div class="cover radius col-xs-4 col-sm-3" title="{{title}}"
+             style="background-image: url('http://image.doinblog.com/{{cover}}-articleListCover')"></div>
+        {{else}}
+        <div class="cover radius flex-center-center col-xs-4 col-sm-3" title="{{title}}">
+            <i class="iconfont icon-mianwubiaoqing"></i>
+        </div>
+        {{/if}}
         <div class="text col-xs-8 col-sm-9 flex-colmun">
-            <header class="text-overflow">
-                <p class="title" title="{{title}}">{{title}}</p>
-                <p class="brief text-overflow small" title="{{brief}}">{{brief}}</p>
+            <header>
+                <p class="text-overflow title" title="{{title}}">{{title}}</p>
+                <p class="text-overflow small brief" title="{{brief}}">{{brief}}</p>
             </header>
             <div class="info">
                 <small title="更新时间：{{date}}">

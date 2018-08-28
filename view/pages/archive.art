@@ -1,0 +1,38 @@
+{{extend '../layout'}}
+
+{{block 'title'}}文章归档{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="./css/archive.css">
+{{/block}}
+
+{{block 'main'}}
+<div class="radius translucent archive">
+    {{if articleArchive.length}}
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        {{each articleArchive}}
+        <div class="panel panel-success">
+            <div class="panel-heading" role="tab" id="heading_{{$index}}">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{$index}}" aria-expanded="true"
+                       aria-controls="collapse_{{$index}}">{{$value.months}}<span class="count">（{{$value.count}}）</span></a>
+                </h4>
+            </div>
+            <div id="collapse_{{$index}}" class="panel-collapse collapse {{if $index===0}}in{{/if}}" role="tabpanel"
+                 aria-labelledby="heading_{{$index}}">
+                <ul class="list-group">
+                    <li class="list-group-item">{{$index}}</li>
+                </ul>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{else}}
+    {{include '../components/empty'}}
+    {{/if}}
+</div>
+<script>
+    $('#accordion').on('shown.bs.collapse', function () {
+        console.log($(this).find('.panel-collapse.in').html());
+    })
+</script>
+{{/block}}

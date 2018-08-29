@@ -1,0 +1,51 @@
+{{extend '../layout'}}
+
+{{block 'title'}}标签{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="./css/label.css">
+{{/block}}
+
+{{block 'main'}}
+{{if labelList && labelList.length}}
+<div class="radius translucent" id="label_list">
+    <div class="hidden-sm hidden-md hidden-lg mb_label_list">
+        {{each labelList}}
+        <a href="/?labelId={{$value.id}}" class="label_item">{{$value.name}}</a>
+        {{/each}}
+    </div>
+</div>
+<script src="./js/jquery.svg3dtagcloud.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var entries = [
+            {{each labelList}}
+            {label: '{{$value.name}}', url: '/?labelId={{$value.id}}', target: '_self'},
+            {{/each}}
+        ];
+        var settings = {
+            entries: entries,
+            width: '100%',
+            height: '90%',
+            radius: '65%',
+            radiusMin: 75,
+            bgDraw: false,
+            opacityOver: 0.9,
+            opacityOut: 0.2,
+            opacitySpeed: 2,
+            fov: 800,
+            speed: 0.15,
+            fontFamily: 'Helvetica Neue",Helvetica,Arial,sans-serif',
+            fontSize: '16',
+            fontColor: '#41b883',
+            fontWeight: 'normal',
+            fontStyle: 'normal',
+            fontStretch: 'normal',
+            fontToUpperCase: false
+        };
+        $('#label_list').svg3DTagCloud(settings);
+    });
+</script>
+{{else}}
+{{include '../components/empty'}}
+{{/if}}
+{{/block}}

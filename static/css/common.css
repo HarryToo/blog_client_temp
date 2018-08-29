@@ -46,7 +46,7 @@ body {
 
 .pager li > a:hover {
     color: #41b883;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .pager .disabled > a {
@@ -149,15 +149,7 @@ input.form-control {
 
 /*article_list*/
 .article_list {
-    margin-top: 15px;
     overflow: visible;
-}
-
-@media (max-width: 767px) {
-    .article_list {
-        margin-top: 0;
-        border-top: none;
-    }
 }
 
 .article_item {

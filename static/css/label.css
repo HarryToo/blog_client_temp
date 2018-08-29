@@ -1,0 +1,33 @@
+#label_list {
+    height: 681px;
+}
+
+#label_list .mb_label_list a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+#label_list .mb_label_list a:first-child {
+    padding-top: 0;
+}
+
+#label_list .mb_label_list a, #label_list svg a {
+    color: #555;
+    transition: 0.2s;
+}
+
+#label_list .mb_label_list a:focus, #label_list .mb_label_list a:hover, #label_list svg a:focus, #label_list svg a:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    #label_list {
+        height: calc(100vh - 50px);
+        padding: 10px;
+    }
+
+    #label_list svg {
+        display: none;
+    }
+}

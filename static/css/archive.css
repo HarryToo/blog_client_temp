@@ -21,6 +21,11 @@
     font-size: 14px;
 }
 
+.panel-success > .panel-heading a .iconfont {
+    padding-right: 6px;
+    font-size: 14px;
+}
+
 .panel-success > .panel-heading a .count {
     color: #999;
 }
@@ -37,5 +42,24 @@
 .panel-group .list-group-item {
     border-style: dashed;
     border-color: #eee;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.panel-group .list-group-item a {
+    color: #555;
+    transition: 0.2s;
+}
+
+.panel-group .list-group-item a:focus, .panel-group .list-group-item a:hover {
+    color: #41b883;
+    text-decoration: none;
+}
+
+.panel-group .list-group-item small {
+    padding-left: 20px;
+    color: #ccc;
+}
+
+.panel-group .list-group-item small .iconfont {
+    font-size: 12px;
 }

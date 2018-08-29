@@ -8,7 +8,7 @@
     <title>{{block 'title'}}{{/block}}</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_648952_c79r1mcii6.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_648952_azfi0kbnhco.css">
     <link rel="stylesheet" href="./css/reuse.css">
     <link rel="stylesheet" href="./css/common.css">
     <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>

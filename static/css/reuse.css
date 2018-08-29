@@ -5,7 +5,7 @@
 }
 
 .translucent{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .text-overflow {
@@ -19,6 +19,15 @@
     display: flex;
     -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-between-center {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
     -webkit-align-items: center;
     align-items: center;
 }

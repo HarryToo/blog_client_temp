@@ -30,11 +30,15 @@ module.exports = {
         return banner;
     },
     // 获取文章列表数据
-    async getArticleListData() {
-        let articleList = [];
-        let {code, data} = await axios.get('/api/article/getArticleList');
+    async getArticleList(params) {
+        let articleList = {};
+        let {code, data, pageIndex, pageTotal} = await axios.get('/api/article/getArticleList', {params});
         if (code === 200) {
-            articleList = data;
+            articleList = {
+                data,
+                pageIndex,
+                pageTotal
+            };
         }
         return articleList;
     },
@@ -47,6 +51,28 @@ module.exports = {
         }
         return articleTotal;
     },
+    // 获取标签对应文章列表数据
+    async getArticleListByLabelId(params) {
+        let articleList = {};
+        let {code, data, pageIndex, pageTotal} = await axios.get('/api/article/getArticleListByLabelId', {params});
+        if (code === 200) {
+            articleList = {
+                data,
+                pageIndex,
+                pageTotal
+            };
+        }
+        return articleList;
+    },
+    // 获取标签名
+    async getLabelNameById(params) {
+        let labelName = '';
+        let {code, data} = await axios.post('/api/label/getLabelById', params);
+        if (code === 200) {
+            labelName = data.name;
+        }
+        return labelName;
+    },
     // 获取标签总数
     async getLabelTotal() {
         let labelTotal = 0;
@@ -56,10 +82,23 @@ module.exports = {
         }
         return labelTotal;
     },
-    // 获取文章按月归档
-    async getArticleArchive() {
+    // 获取文章按月归档数据
+    async getArticleArchive(params) {
+        let archiveList = {};
+        let {code, data, pageIndex, pageTotal} = await axios.get('/api/article/archiveByMonth', {params});
+        if (code === 200) {
+            archiveList = {
+                data,
+                pageIndex,
+                pageTotal
+            };
+        }
+        return archiveList;
+    },
+    // 获取标签列表数据
+    async getLabelList() {
         let labelTotal = 0;
-        let {code, data} = await axios.get('/api/article/archiveByMonth');
+        let {code, data} = await axios.get('/api/label/getLabelList');
         if (code === 200) {
             labelTotal = data;
         }

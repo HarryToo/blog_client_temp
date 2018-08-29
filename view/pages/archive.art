@@ -6,33 +6,57 @@
 {{/block}}
 
 {{block 'main'}}
+{{if archiveList.data && archiveList.data.length}}
 <div class="radius translucent archive">
-    {{if articleArchive.length}}
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        {{each articleArchive}}
+        {{each archiveList.data}}
         <div class="panel panel-success">
             <div class="panel-heading" role="tab" id="heading_{{$index}}">
                 <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{$index}}" aria-expanded="true"
-                       aria-controls="collapse_{{$index}}">{{$value.months}}<span class="count">（{{$value.count}}）</span></a>
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{$index}}" aria-expanded="true" aria-controls="collapse_{{$index}}">
+                        <i class="iconfont icon-rili"></i>
+                        <span>{{$value.month}}</span>
+                        <span class="count">（{{$value.articleList.length}}）</span>
+                    </a>
                 </h4>
             </div>
             <div id="collapse_{{$index}}" class="panel-collapse collapse {{if $index===0}}in{{/if}}" role="tabpanel"
                  aria-labelledby="heading_{{$index}}">
                 <ul class="list-group">
-                    <li class="list-group-item">{{$index}}</li>
+                    {{each $value.articleList}}
+                    <li class="list-group-item">
+                        <article class="flex-between-center">
+                            <a href="#">{{$value.title}}</a>
+                            <small>
+                                <i class="iconfont icon-yk_shijian"></i>
+                                <span>{{$value.date}}</span>
+                            </small>
+                        </article>
+                    </li>
+                    {{/each}}
                 </ul>
             </div>
         </div>
         {{/each}}
     </div>
-    {{else}}
-    {{include '../components/empty'}}
-    {{/if}}
 </div>
-<script>
-    $('#accordion').on('shown.bs.collapse', function () {
-        console.log($(this).find('.panel-collapse.in').html());
-    })
-</script>
+{{if archiveList.pageTotal>1}}
+<nav>
+    <ul class="pager">
+        {{if archiveList.pageIndex===1}}
+        <li class="disabled"><a href="javascript: void(0);" title="没有上一页">上一页</a></li>
+        {{else}}
+        <li><a href="/archive?pageIndex={{archiveList.pageIndex-1}}" title="上一页">上一页</a></li>
+        {{/if}}
+        {{if archiveList.pageIndex===archiveList.pageTotal}}
+        <li class="disabled"><a href="javascript: void(0);" title="没有下一页">下一页</a></li>
+        {{else}}
+        <li><a href="/archive?pageIndex={{archiveList.pageIndex+1}}" title="下一页">下一页</a></li>
+        {{/if}}
+    </ul>
+</nav>
+{{/if}}
+{{else}}
+{{include '../components/empty'}}
+{{/if}}
 {{/block}}

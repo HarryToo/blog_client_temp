@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top animated fadeInDown">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -19,7 +19,7 @@
                     <a href="/archive">归档</a>
                 </li>
                 <li>
-                    <a href="#">标签</a>
+                    <a href="/label">标签</a>
                 </li>
                 <li>
                     <a href="#">随记</a>
@@ -28,11 +28,11 @@
                     <a href="#">关于</a>
                 </li>
             </ul>
-            <div class="navbar-form navbar-right">
+            <form class="navbar-form navbar-right" action="/">
                 <div class="form-group form-group-sm">
-                    <input type="text" class="form-control" placeholder="搜索文章">
+                    <input type="text" class="form-control" autocomplete="off" placeholder="回车搜索文章" name="searchVal" id="search_input">
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </nav>

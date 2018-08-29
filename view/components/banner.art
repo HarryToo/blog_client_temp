@@ -1,4 +1,4 @@
-{{if $data.length}}
+{{if $data && $data.length}}
 <div class="swiper-container radius banner">
     <div class="swiper-wrapper">
         {{each}}

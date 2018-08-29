@@ -8,18 +8,37 @@
 {{/block}}
 
 {{block 'main'}}
+{{if !searchVal && !labelName && articleList.pageIndex===1}}
 {{include '../components/banner' banner}}
-{{if articleList.length}}
+{{/if}}
+
+{{if searchVal || labelName}}
+<div class="keyword" style="padding: 10px;">关于 ' <span style="color: #41b883;">{{searchVal || labelName}}</span> ' 的查找结果：</div>
+{{/if}}
+
+{{if articleList.data && articleList.data.length}}
 <div class="radius article_list">
-    {{each articleList}}
+    {{each articleList.data}}
     {{include '../components/articleItem' $value}}
     {{/each}}
-    <nav aria-label="...">
+    {{if articleList.pageTotal>1}}
+    <nav>
         <ul class="pager">
-            <li><a href="#">上一页</a></li>
-            <li class="disabled"><a href="#">下一页</a></li>
+            {{if articleList.pageIndex===1}}
+            <li class="disabled"><a href="javascript: void(0);" title="没有上一页">上一页</a></li>
+            {{else}}
+            <li><a href="/?pageIndex={{articleList.pageIndex-1}}" title="上一页">上一页</a></li>
+            {{/if}}
+            {{if articleList.pageIndex===articleList.pageTotal}}
+            <li class="disabled"><a href="javascript: void(0);" title="没有下一页">下一页</a></li>
+            {{else}}
+            <li><a href="/?pageIndex={{articleList.pageIndex+1}}" title="下一页">下一页</a></li>
+            {{/if}}
         </ul>
     </nav>
+    {{/if}}
 </div>
+{{else}}
+{{include '../components/empty'}}
 {{/if}}
 {{/block}}

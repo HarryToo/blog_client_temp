@@ -19,21 +19,46 @@ async function getCommonData() {
 router
     .get('/', async ctx => {
         let commonData = await getCommonData();
-        let articleList = await api.getArticleListData();
+        let pageIndex = ctx.query.pageIndex;
+        let labelId = ctx.query.labelId;
+        let searchVal = ctx.query.searchVal;
+        let labelName = '';
+        let articleList = {};
+        if (searchVal) {
+            articleList = await api.getArticleList({searchVal, pageIndex});
+        } else if (labelId) {
+            articleList = await api.getArticleListByLabelId({labelId, pageIndex});
+            labelName = await api.getLabelNameById({id: labelId});
+        } else {
+            articleList = await api.getArticleList({pageIndex});
+        }
         await ctx.render('./pages/index', {
             individuation: commonData.individuation,
             banner: commonData.sideBar.banner,
             sideBar: commonData.sideBar,
+            searchVal,
+            labelName,
             articleList
         });
     })
     .get('/archive', async ctx => {
         let commonData = await getCommonData();
-        let articleArchive = await api.getArticleArchive();
+        let pageIndex = ctx.query.pageIndex;
+        let pageSize = 12;
+        let archiveList = await api.getArticleArchive({pageIndex, pageSize});
         await ctx.render('./pages/archive', {
             individuation: commonData.individuation,
             sideBar: commonData.sideBar,
-            articleArchive
+            archiveList
+        });
+    })
+    .get('/label', async ctx => {
+        let commonData = await getCommonData();
+        let labelList = await api.getLabelList();
+        await ctx.render('./pages/label', {
+            individuation: commonData.individuation,
+            sideBar: commonData.sideBar,
+            labelList
         });
     });
 

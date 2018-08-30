@@ -2,12 +2,12 @@
 
 {{block 'title'}}文章归档{{/block}}
 {{block 'head'}}
-<link rel="stylesheet" href="./css/archive.css">
+<link rel="stylesheet" href="/css/archive.css">
 {{/block}}
 
 {{block 'main'}}
 {{if archiveList.data && archiveList.data.length}}
-<div class="radius translucent archive">
+<div class="radius translucent" id="archive">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         {{each archiveList.data}}
         <div class="panel panel-success">
@@ -26,7 +26,7 @@
                     {{each $value.articleList}}
                     <li class="list-group-item">
                         <article class="flex-between-center">
-                            <a href="#">{{$value.title}}</a>
+                            <a href="/article?id={{$value.id}}">{{$value.title}}</a>
                             <small>
                                 <i class="iconfont icon-yk_shijian"></i>
                                 <span>{{$value.date}}</span>

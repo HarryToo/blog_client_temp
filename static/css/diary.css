@@ -1,0 +1,78 @@
+#calendar .layui-laydate, #calendar .layui-laydate .layui-laydate-main {
+    width: 100%;
+}
+
+#calendar .layui-laydate, .layui-laydate-hint, #calendar .layui-laydate-list {
+    background-color: transparent;
+}
+
+#calendar .layui-laydate {
+    border-bottom: 1px solid #cce2d5;
+    box-shadow: none;
+}
+
+.layui-laydate-header {
+    font-size: 16px;
+}
+
+#calendar .layui-laydate-content {
+    color: #555;
+    border: none;
+}
+
+#calendar .layui-laydate-content table {
+    opacity: 0;
+}
+
+#calendar .layui-laydate-list li {
+    border-radius: 4px;
+}
+
+.diary_list {
+    padding: 14px 10px 0;
+    overflow-y: hidden;
+}
+
+.diary_list .diary_item {
+    padding: 14px 0 4px;
+    border-bottom: 1px solid #eee;
+}
+
+.diary_list .diary_item:first-child {
+    padding-top: 0;
+}
+
+.diary_list .diary_item:last-child {
+    border-bottom: none;
+}
+
+.diary_list .diary_item .date {
+    padding-right: 20px;
+    color: #999;
+}
+
+.diary_list .diary_item .date .iconfont {
+    font-size: 14px;
+    padding-right: 6px;
+}
+
+.diary_list .diary_item .diary_cont header {
+    color: #7fac8d;
+}
+
+.diary_list .diary_item .diary_cont p {
+    padding-top: 10px;
+    text-indent: 2em;
+    color: #777;
+}
+
+@media (max-width: 767px) {
+    .diary_list .diary_item {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .diary_list .diary_item .diary_cont {
+        padding-top: 10px;
+    }
+}

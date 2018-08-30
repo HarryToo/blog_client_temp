@@ -2,7 +2,7 @@
 
 {{block 'title'}}标签{{/block}}
 {{block 'head'}}
-<link rel="stylesheet" href="./css/label.css">
+<link rel="stylesheet" href="/css/label.css">
 {{/block}}
 
 {{block 'main'}}

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top animated fadeInDown">
+<nav class="navbar navbar-default navbar-fixed-top animated fadeInDown fast">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -22,10 +22,10 @@
                     <a href="/label">标签</a>
                 </li>
                 <li>
-                    <a href="#">随记</a>
+                    <a href="/diary">随记</a>
                 </li>
                 <li>
-                    <a href="#">关于</a>
+                    <a href="/about">关于</a>
                 </li>
             </ul>
             <form class="navbar-form navbar-right" action="/">
@@ -39,5 +39,7 @@
 
 <script>
     var pathName = location.pathname;
-    $('nav .navbar-nav li a[href="' + pathName + '"]').parent().addClass('active').siblings('li').removeClass('active');
+    if ($('nav .navbar-nav li a[href="' + pathName + '"]').length) {
+        $('nav .navbar-nav li a[href="' + pathName + '"]').parent().addClass('active').siblings('li').removeClass('active');
+    }
 </script>

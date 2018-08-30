@@ -84,7 +84,7 @@ module.exports = {
     },
     // 获取文章按月归档数据
     async getArticleArchive(params) {
-        let archiveList = {};
+        let archiveList = [];
         let {code, data, pageIndex, pageTotal} = await axios.get('/api/article/archiveByMonth', {params});
         if (code === 200) {
             archiveList = {
@@ -97,11 +97,29 @@ module.exports = {
     },
     // 获取标签列表数据
     async getLabelList() {
-        let labelTotal = 0;
+        let labelList = [];
         let {code, data} = await axios.get('/api/label/getLabelList');
+        if (code === 200) {
+            labelList = data;
+        }
+        return labelList;
+    },
+    // 获取月份随记列表数据
+    async getDiaryList(params) {
+        let labelTotal = [];
+        let {code, data} = await axios.get('/api/diary/getDiaryByMonth', {params});
         if (code === 200) {
             labelTotal = data;
         }
         return labelTotal;
+    },
+    // 获取文章详情数据
+    async getArticleDetail(params) {
+        let articleDetail = {};
+        let {code, data} = await axios.get('/api/article/getArticleById', {params});
+        if (code === 200) {
+            articleDetail = data;
+        }
+        return articleDetail;
     }
 };

@@ -1,0 +1,85 @@
+{{extend '../layout'}}
+
+{{block 'title'}}随记{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/css/diary.css">
+<script src="/js/laydate/laydate.js"></script>
+{{/block}}
+
+{{block 'main'}}
+<div class="radius translucent" id="diary">
+    <div id="calendar"></div>
+    {{if diaryList && diaryList.length}}
+    <div class="diary_list">
+        {{each diaryList}}
+        <div class="diary_item flex-start-start animated bounceInDown fast">
+            <div class="date flex-start-center">
+                <i class="iconfont icon-rili"></i>
+                <span>{{$value.date.replace(/\//g, '.')}}</span>
+            </div>
+            <div class="diary_cont">
+                <header>{{$value.title}}</header>
+                <p>{{$value.description}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{else}}
+    {{include '../components/empty'}}
+    {{/if}}
+</div>
+<script>
+    laydate.render({
+        elem: '#calendar',
+        position: 'static',
+        type: 'month',
+        max: 0,
+        showBottom: false,
+        theme: '#8ed5b2',
+        change: function (value, date) {
+            getDiaryList(value);
+        }
+    });
+
+    function getDiaryList(m) {
+        $.ajax({
+            url: '/diary',
+            method: 'get',
+            dataType: 'json',
+            data: {
+                month: m + '-01'
+            },
+            success: function (ret) {
+                renderDiaryList(ret.diaryList);
+            }
+        });
+    }
+
+    function renderDiaryList(data) {
+        if (data && data.length) {
+            var html = '';
+            for (var i = 0; i < data.length; i++) {
+                html += '<div class="diary_item flex-start-start animated bounceInDown fast">' +
+                    '<div class="date flex-start-center">' +
+                    '<i class="iconfont icon-rili"></i>' +
+                    '<span>' + data[i].date.replace(/\//g, '.') + '</span>' +
+                    '</div>' +
+                    '<div class="diary_cont">' +
+                    '<header>' + data[i].title + '</header>' +
+                    '<p>' + data[i].description + '</p>' +
+                    '</div>' +
+                    '</div>';
+            }
+            $('#diary .empty').hide();
+            $('#diary .diary_list').show().html(html);
+        } else {
+            $('#diary .diary_list').hide();
+            if ($('#diary .empty').length) {
+                $('#diary .empty').show();
+            } else {
+                $('#diary').append('<div class="empty"><i class="iconfont icon-icon-test animated rubberBand infinite"></i><p>no more ..</p></div>');
+            }
+        }
+    }
+</script>
+{{/block}}

@@ -60,6 +60,44 @@ router
             sideBar: commonData.sideBar,
             labelList
         });
+    })
+    .get('/diary', async ctx => {
+        let commonData = await getCommonData();
+        let month = '', diaryList = [];
+        if (ctx.query.month) {
+            // client端异步请求
+            month = ctx.query.month;
+            diaryList = await api.getDiaryList({month});
+            ctx.body = {diaryList};
+        } else {
+            let y = new Date().getFullYear();
+            let m = new Date().getMonth() + 1;
+            m = m < 10 ? `0${m}` : m;
+            month = `${y}-${m}-01`;
+            diaryList = await api.getDiaryList({month});
+            await ctx.render('./pages/diary', {
+                individuation: commonData.individuation,
+                sideBar: commonData.sideBar,
+                diaryList
+            });
+        }
+    })
+    .get('/about', async ctx => {
+        let commonData = await getCommonData();
+        await ctx.render('./pages/about', {
+            individuation: commonData.individuation,
+            sideBar: commonData.sideBar
+        });
+    })
+    .get('/article', async ctx => {
+        let commonData = await getCommonData();
+        let id = ctx.query.id;
+        let articleDetail = await api.getArticleDetail({id});
+        await ctx.render('./pages/article', {
+            individuation: commonData.individuation,
+            sideBar: commonData.sideBar,
+            articleDetail
+        });
     });
 
-module.exports = router;
+module.exports = {router, getCommonData};

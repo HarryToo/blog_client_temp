@@ -1,4 +1,4 @@
-<a href="#" class="article_item translucent container-fluid">
+<a href="/article?id={{id}}" class="article_item translucent container-fluid">
     <article class="row">
         {{if cover.length}}
         <div class="cover radius col-xs-4 col-sm-3" title="{{title}}"

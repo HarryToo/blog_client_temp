@@ -1,0 +1,19 @@
+{{extend '../layout'}}
+
+{{block 'title'}}关于{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/css/about.css">
+{{/block}}
+
+{{block 'main'}}
+<div id="about">
+    {{if individuation.about_banner}}
+    <div class="radius translucent about_banner">
+        <img src="http://image.doinblog.com/{{individuation.about_banner}}" alt="">
+    </div>
+    {{/if}}
+    <div class="radius translucent about_cont">
+        {{@ individuation.about}}
+    </div>
+</div>
+{{/block}}

@@ -1,0 +1,24 @@
+{{extend '../layout'}}
+
+{{block 'title'}}文章{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/css/article.css">
+{{/block}}
+
+{{block 'main'}}
+<article id="article">
+    <header class="radius translucent">
+        {{if articleDetail.cover}}
+        <img src="http://image.doinblog.com/{{articleDetail.cover}}-banner" alt="" class="bg">
+        {{else}}
+        <img src="http://image.doinblog.com/{{individuation.backdrop}}" alt="" class="bg">
+        {{/if}}
+        <div class="text">
+
+        </div>
+    </header>
+    <div class="radius translucent content">
+        {{@ articleDetail.content}}
+    </div>
+</article>
+{{/block}}

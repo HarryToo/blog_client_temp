@@ -33,6 +33,19 @@
     <div class="radius translucent content">
         {{@ articleDetail.content}}
     </div>
+    <div class="radius translucent comment">
+        <p class="header">
+            <i class="iconfont icon-mn_hudong"></i>
+            <span>评论</span>
+        </p>
+        {{if commentList.length}}
+        {{each commentList}}
+        {{$value}}
+        {{/each}}
+        {{else}}
+        {{include '../components/empty'}}
+        {{/if}}
+    </div>
 </article>
 
 <script>
@@ -59,6 +72,6 @@
         setTimeout(function () {
             $this.find('.iconfont').removeClass('icon-duigou').addClass('icon-copy');
         }, 1000);
-    })
+    });
 </script>
 {{/block}}

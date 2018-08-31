@@ -94,10 +94,12 @@ router
         let id = ctx.query.id;
         await api.updateArticleHits({id});
         let articleDetail = await api.getArticleDetail({id});
+        let commentList = await api.getCommentList({articleId: id});
         await ctx.render('./pages/article', {
             individuation: commonData.individuation,
             sideBar: commonData.sideBar,
-            articleDetail
+            articleDetail,
+            commentList
         });
     });
 

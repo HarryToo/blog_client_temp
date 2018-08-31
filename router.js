@@ -92,6 +92,7 @@ router
     .get('/article', async ctx => {
         let commonData = await getCommonData();
         let id = ctx.query.id;
+        await api.updateArticleHits({id});
         let articleDetail = await api.getArticleDetail({id});
         await ctx.render('./pages/article', {
             individuation: commonData.individuation,

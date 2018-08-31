@@ -113,6 +113,10 @@ module.exports = {
         }
         return labelTotal;
     },
+    // 增加文章阅读量
+    async updateArticleHits(params) {
+        await axios.post('/api/article/updateArticleHits', params);
+    },
     // 获取文章详情数据
     async getArticleDetail(params) {
         let articleDetail = {};

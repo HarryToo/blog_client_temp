@@ -258,7 +258,7 @@ main .right_cont {
 }
 
 .business_card .bg {
-    height: 160px;
+    height: 150px;
     background-color: rgba(65, 184, 131, 0.5);
     background-repeat: no-repeat;
     background-position: center 18%;
@@ -284,7 +284,7 @@ main .right_cont {
 }
 
 .business_card .cont {
-    padding-top: 23px;
+    padding-top: 40px;
     text-align: center;
     overflow: hidden;
 }

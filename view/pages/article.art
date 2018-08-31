@@ -1,7 +1,9 @@
 {{extend '../layout'}}
 
-{{block 'title'}}文章{{/block}}
+{{block 'title'}}{{articleDetail.title}}{{/block}}
 {{block 'head'}}
+<script src="/js/highlight.min.js"></script>
+<link rel="stylesheet" href="/css/atom-one-light.min.css">
 <link rel="stylesheet" href="/css/article.css">
 {{/block}}
 
@@ -14,11 +16,49 @@
         <img src="http://image.doinblog.com/{{individuation.backdrop}}" alt="" class="bg">
         {{/if}}
         <div class="text">
-
+            <h4 class="title">{{articleDetail.title}}</h4>
+            <p class="info">
+                <span title="更新时间">
+                    <i class="iconfont icon-yk_shijian"></i>
+                    <span>{{articleDetail.date}}</span>
+                </span>
+                <span title="阅读次数">
+                    <i class="iconfont icon-eye"></i>
+                    <span>{{articleDetail.hits}}</span>
+                </span>
+            </p>
+            <p class="brief">{{articleDetail.brief}}</p>
         </div>
     </header>
     <div class="radius translucent content">
         {{@ articleDetail.content}}
     </div>
 </article>
+
+<script>
+    $(document).ready(function () {
+        $('.content pre').each(function (index, item) {
+            hljs.highlightBlock(item);
+            $(item).prepend('<div class="copy_btn" title="复制代码块"><i class="iconfont icon-copy"></i></div>');
+        });
+    });
+
+    // copy
+    $('.content pre').on('click', '.copy_btn', function () {
+        const range = document.createRange();
+        var $this = $(this);
+        range.selectNode($this.parent()[0]);
+        const selection = window.getSelection();
+        if (selection.rangeCount > 0) {
+            selection.removeAllRanges();
+        }
+        selection.addRange(range);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+        $this.find('.iconfont').removeClass('icon-copy').addClass('icon-duigou');
+        setTimeout(function () {
+            $this.find('.iconfont').removeClass('icon-duigou').addClass('icon-copy');
+        }, 1000);
+    })
+</script>
 {{/block}}

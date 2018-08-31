@@ -21,23 +21,23 @@
     {{each articleList.data}}
     {{include '../components/articleItem' $value}}
     {{/each}}
-    {{if articleList.pageTotal>1}}
-    <nav>
-        <ul class="pager">
-            {{if articleList.pageIndex===1}}
-            <li class="disabled"><a href="javascript: void(0);" title="没有上一页">上一页</a></li>
-            {{else}}
-            <li><a href="/?pageIndex={{articleList.pageIndex-1}}" title="上一页">上一页</a></li>
-            {{/if}}
-            {{if articleList.pageIndex===articleList.pageTotal}}
-            <li class="disabled"><a href="javascript: void(0);" title="没有下一页">下一页</a></li>
-            {{else}}
-            <li><a href="/?pageIndex={{articleList.pageIndex+1}}" title="下一页">下一页</a></li>
-            {{/if}}
-        </ul>
-    </nav>
-    {{/if}}
 </div>
+{{if articleList.pageTotal>1}}
+<nav>
+    <ul class="pager">
+        {{if articleList.pageIndex===1}}
+        <li class="disabled"><a href="javascript: void(0);" title="没有上一页">上一页</a></li>
+        {{else}}
+        <li><a href="/?pageIndex={{articleList.pageIndex-1}}" title="上一页">上一页</a></li>
+        {{/if}}
+        {{if articleList.pageIndex===articleList.pageTotal}}
+        <li class="disabled"><a href="javascript: void(0);" title="没有下一页">下一页</a></li>
+        {{else}}
+        <li><a href="/?pageIndex={{articleList.pageIndex+1}}" title="下一页">下一页</a></li>
+        {{/if}}
+    </ul>
+</nav>
+{{/if}}
 {{else}}
 {{include '../components/empty'}}
 {{/if}}

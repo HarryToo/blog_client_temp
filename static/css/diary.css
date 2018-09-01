@@ -30,7 +30,7 @@
 
 .diary_list {
     padding: 14px 10px 0;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .diary_list .diary_item {

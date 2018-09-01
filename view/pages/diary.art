@@ -9,8 +9,8 @@
 {{block 'main'}}
 <div class="radius translucent" id="diary">
     <div id="calendar"></div>
-    {{if diaryList && diaryList.length}}
     <div class="diary_list">
+        {{if diaryList && diaryList.length}}
         {{each diaryList}}
         <div class="diary_item flex-start-start animated bounceInDown fast">
             <div class="date flex-start-center">
@@ -23,10 +23,10 @@
             </div>
         </div>
         {{/each}}
+        {{else}}
+        {{include '../components/empty'}}
+        {{/if}}
     </div>
-    {{else}}
-    {{include '../components/empty'}}
-    {{/if}}
 </div>
 <script>
     laydate.render({

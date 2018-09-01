@@ -73,7 +73,6 @@
     position: relative;
     width: 100%;
     border-color: #eee;
-    overflow-x: scroll;
 }
 
 #article .content pre .copy_btn {

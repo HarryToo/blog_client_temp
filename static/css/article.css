@@ -31,7 +31,7 @@
 
 #article header .text .title {
     color: #4da47b;
-    font-weight: bold;
+    font-size: 20px;
 }
 
 #article header .text .info {
@@ -72,6 +72,7 @@
 #article .content pre {
     position: relative;
     width: 100%;
+    padding: 0;
     border-color: #eee;
 }
 
@@ -86,22 +87,109 @@
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.04);
     transition: 0.2s;
+    display: none;
 }
 
 #article .content pre .copy_btn:hover {
     color: #41b883;
 }
 
-#article .comment {
-    padding: 10px;
+#article .content pre:hover .copy_btn {
+    display: block;
 }
 
 #article .comment .header {
+    padding: 10px;
     color: #999;
 }
 
 #article .comment .header .iconfont {
     font-size: 14px;
+}
+
+#article .comment .empty {
+    padding: 30px 0;
+}
+
+#article .comment_form {
+    padding: 0 10px;
+}
+
+#article .comment_form textarea {
+    resize: vertical;
+    -webkit-appearance: none;
+}
+
+#article .comment_form input {
+    -webkit-appearance: none;
+}
+
+#article .comment_list {
+    border-top: 1px dashed #eee;
+}
+
+#article .comment_list .comment_item {
+    padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#article .comment_list .comment_item:nth-child(2n+2) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+#article .comment_list .comment_item:last-child {
+    padding-bottom: 15px;
+}
+
+#article .comment_list .comment_item .user {
+    width: 14%;
+    text-align: center;
+    color: #999;
+}
+
+#article .comment_list .comment_item .user .index {
+    color: #bbb;
+}
+
+#article .comment_list .comment_item .user .iconfont {
+    font-size: 34px;
+}
+
+#article .comment_list .comment_item .user .name {
+    font-size: 12px;
+}
+
+#article .comment_list .comment_item .text {
+    width: 86%;
+    padding-left: 10px;
+}
+
+#article .comment_list .comment_item .text .comment_date {
+    padding: 6px 0;
+    color: #999;
+    font-size: 12px;
+}
+
+#article .comment_list .comment_item .text .reply {
+    display: -webkit-flex;
+    display: flex;
+    padding: 3px 10px;
+    border-radius: 4px;
+    background-color: rgba(65, 184, 131, 0.1);
+}
+
+#article .comment_list .comment_item .text .reply .webmaster {
+    width: 5em;
+    color: #69b893;
+}
+
+#article .comment_list .comment_item .text .reply .reply_date {
+    display: block;
+    line-height: normal;
+    padding-top: 6px;
+    color: #999;
+    font-size: 12px;
 }
 
 @media (max-width: 767px) {

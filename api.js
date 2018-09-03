@@ -134,5 +134,10 @@ module.exports = {
             commentList = data;
         }
         return commentList;
+    },
+    // 发表文章评论
+    async addComment(params) {
+        let res = await axios.post('/api/comment/addComment', params);
+        return res;
     }
 };

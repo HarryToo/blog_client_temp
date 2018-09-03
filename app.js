@@ -1,11 +1,13 @@
 const path = require('path');
 const Koa = require('koa');
 const render = require('koa-art-template');
+const bodyparser = require('koa-bodyparser');
 const static = require('koa-static');
 const {router, getCommonData} = require('./router');
 
 const app = new Koa();
 
+app.use(bodyparser());
 app.use(static(
     path.join(__dirname, './static')
 ));

@@ -101,6 +101,15 @@ router
             articleDetail,
             commentList
         });
+    })
+    .post('/article_comment', async ctx => {
+        let params = {
+            articleId: ctx.request.body.articleId,
+            content: ctx.request.body.content,
+            username: ctx.request.body.username
+        };
+        let res = await api.addComment(params);
+        ctx.body = res;
     });
 
 module.exports = {router, getCommonData};

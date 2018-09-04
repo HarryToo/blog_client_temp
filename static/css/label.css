@@ -23,7 +23,7 @@
 
 @media (max-width: 767px) {
     #label_list {
-        height: calc(100vh - 50px);
+        height: calc(100vh - 91px);
         padding: 10px;
     }
 

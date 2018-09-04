@@ -5,6 +5,7 @@ body {
 }
 
 main {
+    min-height: calc(100vh - 121px);
     margin-bottom: 15px;
 }
 
@@ -27,6 +28,7 @@ main {
     }
 
     main {
+        min-height: calc(100vh - 91px);
         margin-bottom: 0;
     }
 
@@ -76,7 +78,7 @@ main {
 
 /*header*/
 .navbar-default {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.94);
 }
 
 @media (max-width: 767px) {
@@ -340,6 +342,29 @@ main .right_cont {
 
 .top_article_list .article_item .text {
     width: 66%;
+}
+
+/*footer*/
+footer {
+    height: 40px;
+    border-top: 1px solid #e7e7e7;
+    background: rgba(255, 255, 255, 0.94);
+}
+
+footer span {
+    line-height: 40px;
+    color: #999;
+    font-size: 12px;
+}
+
+@media (max-width: 767px) {
+    footer {
+        background: rgba(255, 255, 255, 0.97);
+    }
+
+    footer .text-right {
+        text-align: center;
+    }
 }
 
 @media (max-width: 991px) {

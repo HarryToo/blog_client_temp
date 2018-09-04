@@ -1,0 +1,8 @@
+<footer class="animated fadeInUp fast">
+    <div class="container">
+        <div class="row">
+            <span class="hidden-xs col-sm-8 text-overflow">{{left}}</span>
+            <span class="col-xs-12 col-sm-4 text-right text-overflow">{{right}}</span>
+        </div>
+    </div>
+</footer>

@@ -67,6 +67,10 @@
 }
 
 @media (max-width: 767px) {
+    #diary {
+        height: calc(100vh - 91px);
+    }
+
     .diary_list .diary_item {
         -webkit-flex-direction: column;
         flex-direction: column;

@@ -1,5 +1,6 @@
 {{extend '../layout'}}
 
+{{block 'description'}}博客随记{{/block}}
 {{block 'title'}}随记{{/block}}
 {{block 'head'}}
 <link rel="stylesheet" href="/css/diary.css">

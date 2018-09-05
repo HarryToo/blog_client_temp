@@ -1,5 +1,6 @@
 {{extend '../layout'}}
 
+{{block 'description'}}技术知识标签分类{{/block}}
 {{block 'title'}}标签{{/block}}
 {{block 'head'}}
 <link rel="stylesheet" href="/css/label.css">

@@ -25,6 +25,7 @@ main {
 @media (max-width: 767px) {
     body {
         padding-top: 50px;
+        font-size: 15px;
     }
 
     main {
@@ -203,6 +204,7 @@ input.form-control, textarea.form-control {
 
 .article_item .text {
     height: 100%;
+    padding-right: 0;
 }
 
 .article_item .text header .title {

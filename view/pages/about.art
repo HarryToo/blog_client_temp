@@ -1,5 +1,6 @@
 {{extend '../layout'}}
 
+{{block 'description'}}关于本博客和站长{{/block}}
 {{block 'title'}}关于{{/block}}
 {{block 'head'}}
 <link rel="stylesheet" href="/css/about.css">

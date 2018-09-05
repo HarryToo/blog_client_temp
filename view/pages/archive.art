@@ -1,5 +1,6 @@
 {{extend '../layout'}}
 
+{{block 'description'}}文章归档列表{{/block}}
 {{block 'title'}}文章归档{{/block}}
 {{block 'head'}}
 <link rel="stylesheet" href="/css/archive.css">

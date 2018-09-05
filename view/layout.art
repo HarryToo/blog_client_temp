@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="{{block 'description'}}{{/block}}-DoinBlog-杜航的博客-前端博客">
-    <title>{{block 'title'}}{{/block}}-DoinBlog-杜航的博客</title>
+    <meta name="description" content="{{block 'description'}}{{/block}}-DoinBlog-杜航个人博客-前端博客">
+    <title>{{block 'title'}}{{/block}}-DoinBlog-杜航个人博客</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/pace/1.0.2/themes/green/pace-theme-minimal.min.css">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_648952_jf1qyn6tx7m.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_648952_yhxx6o6u03.css">
     <link rel="stylesheet" href="/css/reuse.css">
     <link rel="stylesheet" href="/css/common.css">
     <script>
@@ -20,6 +20,7 @@
     <script type="text/javascript" src="https://cdn.staticfile.org/pace/1.0.2/pace.min.js"></script>
     <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://jrainlau.github.io/motto/motto.min.js"></script>
     {{block 'head'}}{{/block}}
 </head>
 <body>
@@ -38,6 +39,7 @@
     </div>
 </main>
 {{include './components/footer' individuation.footer_text}}
+{{include './components/backTopBtn'}}
 <script>
     (function () {
         var bp = document.createElement('script');

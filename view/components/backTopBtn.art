@@ -1,0 +1,22 @@
+<div class="radius flex-center-center" id="back_top_btn" title="返回顶部">
+    <i class="iconfont icon-fanhuidingbu"></i>
+    <script>
+        $('#back_top_btn').on('click', function () {
+            var timer = setInterval(function () {
+                var scrollTop = $(document).scrollTop();
+                $(document).scrollTop(scrollTop - scrollTop / 15);
+                if ($(document).scrollTop() <= 0) {
+                    clearInterval(timer);
+                }
+            }, 10);
+        });
+        $(document).on('scroll', function () {
+            var scrollTop = $(this).scrollTop();
+            if (scrollTop > 400) {
+                $('#back_top_btn').addClass('reveal');
+            } else {
+                $('#back_top_btn').removeClass('reveal');
+            }
+        });
+    </script>
+</div>

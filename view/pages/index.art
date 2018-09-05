@@ -22,6 +22,14 @@
     {{each articleList.data}}
     {{include '../components/articleItem' $value}}
     {{/each}}
+    {{if searchVal}}
+    <script>
+        // search keyword highlight
+        var keyword = $('.keyword span').text();
+        var title = $('.article_list .article_item .title').text();
+        $('.article_list .article_item .title').html(title.replace(eval('/' + keyword + '/g'), '<span style="color: #41b883;">' + keyword + '</span>'));
+    </script>
+    {{/if}}
 </div>
 {{if articleList.pageTotal>1}}
 <nav>

@@ -14,7 +14,7 @@ app.use(static(
 
 render(app, {
     root: path.join(__dirname, 'view'),
-    debug: process.env.NODE_ENV !== 'production'
+    debug: false
 });
 
 app.use(router.routes()).use(router.allowedMethods());

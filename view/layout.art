@@ -41,8 +41,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="{{block 'description'}}{{/block}}-DoinBlog-杜航个人博客-前端博客">
-    <title>{{block 'title'}}{{/block}}-DoinBlog-杜航个人博客</title>
+    <meta name="description" content="{{block 'description'}}{{/block}} - DoinBlog - 杜航个人博客-前端技术文章博客">
+    <title>{{block 'title'}}{{/block}} - 杜航个人博客</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/pace/1.0.2/themes/green/pace-theme-minimal.min.css">

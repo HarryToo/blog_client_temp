@@ -68,7 +68,7 @@
 
 @media (max-width: 767px) {
     #diary {
-        height: calc(100vh - 91px);
+        min-height: calc(100vh - 91px);
     }
 
     .diary_list .diary_item {

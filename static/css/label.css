@@ -1,5 +1,5 @@
 #label_list {
-    height: 688px;
+    min-height: 688px;
 }
 
 #label_list .mb_label_list a {
@@ -10,6 +10,11 @@
 
 #label_list .mb_label_list a:first-child {
     padding-top: 0;
+}
+
+#label_list .mb_label_list a:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 #label_list .mb_label_list a, #label_list svg a {
@@ -23,8 +28,9 @@
 
 @media (max-width: 767px) {
     #label_list {
-        height: calc(100vh - 91px);
+        min-height: calc(100vh - 91px);
         padding: 10px;
+        overflow: auto;
     }
 
     #label_list svg {

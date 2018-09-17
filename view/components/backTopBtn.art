@@ -2,13 +2,7 @@
     <i class="iconfont icon-fanhuidingbu"></i>
     <script>
         $('#back_top_btn').on('click', function () {
-            var timer = setInterval(function () {
-                var scrollTop = $(document).scrollTop();
-                $(document).scrollTop(scrollTop - scrollTop / 15);
-                if ($(document).scrollTop() <= 0) {
-                    clearInterval(timer);
-                }
-            }, 10);
+            $(document).scrollTop(0);
         });
         $(document).on('scroll', function () {
             var scrollTop = $(this).scrollTop();

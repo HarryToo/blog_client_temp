@@ -89,14 +89,30 @@ main {
 }
 
 .navbar-brand {
-    width: 80px;
+    padding: 0;
+}
+
+.navbar-brand .logo {
+    display: inline-block;
+    width: 70px;
+    height: 100%;
     background-repeat: no-repeat;
     background-position: 15px center;
     background-size: auto calc(100% - 30px);
 }
 
-.navbar-brand img {
+#tp-weather-widget {
     height: 100%;
+    cursor: pointer;
+}
+
+#tp-weather-widget div {
+    color: #999;
+}
+
+#tp-weather-widget .tpwthwidt {
+    padding-left: 8px;
+    border-left: 1px solid #eee;
 }
 
 .navbar-default .navbar-nav > li {

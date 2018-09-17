@@ -106,7 +106,7 @@ main {
     cursor: pointer;
 }
 
-#tp-weather-widget div {
+#tp-weather-widget .tpwidget_title_hook, #tp-weather-widget .tpwidget_icon_hook, #tp-weather-widget .tpwidget_text_hook {
     color: #999;
 }
 

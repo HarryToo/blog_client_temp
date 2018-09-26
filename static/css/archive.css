@@ -58,6 +58,7 @@
 .panel-group .list-group-item small {
     padding-left: 20px;
     color: #ccc;
+    white-space: nowrap;
 }
 
 .panel-group .list-group-item small .iconfont {

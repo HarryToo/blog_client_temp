@@ -30,7 +30,7 @@
                             <a href="/article?id={{$value.id}}">{{$value.title}}</a>
                             <small>
                                 <i class="iconfont icon-yk_shijian"></i>
-                                <span>{{$value.date}}</span>
+                                <span>{{$value.date.substring($value.date.indexOf('-')+1)}}</span>
                             </small>
                         </article>
                     </li>

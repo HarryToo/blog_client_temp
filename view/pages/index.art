@@ -26,8 +26,14 @@
     <script>
         // search keyword highlight
         var keyword = $('.keyword span').text();
-        var title = $('.article_list .article_item .title').text();
-        $('.article_list .article_item .title').html(title.replace(eval('/' + keyword + '/g'), '<span style="color: #41b883;">' + keyword + '</span>'));
+        var title = '', accord = [];
+        $('.article_list .article_item').each(function (index, item) {
+            title = $(item).find('.title').text();
+            accord = title.match(eval('/' + keyword + '/gi'));
+            for (var i = 0; i < accord.length; i++) {
+                $(item).find('.title').html(title.replace(accord[i], '<span style="color: #41b883;">' + accord[i] + '</span>'));
+            }
+        });
     </script>
     {{/if}}
 </div>

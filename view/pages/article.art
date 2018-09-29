@@ -19,13 +19,17 @@
         <div class="text">
             <p class="title">{{articleDetail.title}}</p>
             <p class="info">
-                <span title="更新时间">
+                <span title="阅读次数">
+                    <i class="iconfont icon-yuedu1"></i>
+                    <span>{{articleDetail.hits}}</span>
+                </span>
+                <span title="发布时间">
                     <i class="iconfont icon-yk_shijian"></i>
                     <span>{{articleDetail.date}}</span>
                 </span>
-                <span title="阅读次数">
-                    <i class="iconfont icon-eye"></i>
-                    <span>{{articleDetail.hits}}</span>
+                <span title="更新时间">
+                    <i class="iconfont icon-gengxinshijian"></i>
+                    <span>{{articleDetail.update_date}}</span>
                 </span>
             </p>
             <p class="brief">{{articleDetail.brief}}</p>

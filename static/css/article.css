@@ -35,20 +35,25 @@
 }
 
 #article header .text .info {
-    color: #777;
+    color: #888;
+    font-size: 13px;
 }
 
-#article header .text .info > span:first-child {
-    padding-right: 15px;
+#article header .text .info > span {
+    padding-right: 10px;
 }
 
-#article header .text .date .iconfont {
-    font-size: 14px;
+#article header .text .info > span:last-child {
+    padding-right: 0;
+}
+
+#article header .text .info > span .iconfont {
+    font-size: 13px;
 }
 
 #article header .text .brief {
     text-indent: 2em;
-    color: #666;
+    color: #777;
 }
 
 #article .content {

@@ -14,12 +14,12 @@
                 <p class="text-overflow small brief" title="{{brief}}">{{brief}}</p>
             </header>
             <div class="info">
-                <small title="更新时间：{{date}}">
+                <small title="发布时间：{{date}}">
                     <i class="iconfont icon-yk_shijian"></i>
                     <span>{{date}}</span>
                 </small>
                 <small title="阅读次数：{{hits}}">
-                    <i class="iconfont icon-eye"></i>
+                    <i class="iconfont icon-yuedu1"></i>
                     <span>{{hits}}</span>
                 </small>
             </div>

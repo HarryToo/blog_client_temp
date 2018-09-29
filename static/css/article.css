@@ -103,6 +103,10 @@
     display: block;
 }
 
+#article .content pre code {
+    white-space: pre;
+}
+
 #article .content table {
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;

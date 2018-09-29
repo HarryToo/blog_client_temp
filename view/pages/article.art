@@ -4,7 +4,7 @@
 {{block 'title'}}{{articleDetail.title}}{{/block}}
 {{block 'head'}}
 <script src="https://cdn.staticfile.org/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.12.0/styles/atom-one-light.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.12.0/styles/atom-one-dark.min.css">
 <link rel="stylesheet" href="/css/article.css">
 {{/block}}
 
@@ -89,10 +89,9 @@
 
 <script>
     $(document).ready(function () {
-        $('.content pre').each(function (index, item) {
-            $(item).html('<code>' + $(item).html() + '</code>');
-            $(item).prepend('<div class="copy_btn" title="复制代码块"><i class="iconfont icon-copy"></i></div>');
-            hljs.highlightBlock($(item).find('code')[0]);
+        $('.content pre code').each(function (index, item) {
+            $(item).before('<div class="copy_btn" title="复制代码块"><i class="iconfont icon-copy"></i></div>');
+            hljs.highlightBlock(item);
         });
     });
 

@@ -79,6 +79,7 @@
     width: 100%;
     padding: 0;
     border-color: #eee;
+    word-wrap: normal;
 }
 
 #article .content pre .copy_btn {

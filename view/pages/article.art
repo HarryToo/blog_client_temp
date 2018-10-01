@@ -12,9 +12,9 @@
 <article id="article">
     <header class="radius translucent">
         {{if articleDetail.cover}}
-        <img src="http://image.doinblog.com/{{articleDetail.cover}}-banner" alt="" class="bg">
+        <img src="{{articleDetail.cover}}-banner" alt="" class="bg">
         {{else}}
-        <img src="http://image.doinblog.com/{{individuation.backdrop}}" alt="" class="bg">
+        <img src="{{individuation.backdrop}}" alt="" class="bg">
         {{/if}}
         <div class="text">
             <p class="title">{{articleDetail.title}}</p>

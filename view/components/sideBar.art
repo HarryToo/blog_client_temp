@@ -1,7 +1,7 @@
 <div class="side_bar">
     <div class="radius column business_card">
-        <div class="bg" style="background-image: url('http://image.doinblog.com/{{businessCard.portrait}}')"></div>
-        <a href="/about" class="portrait" title="关于" style="background-image: url('http://image.doinblog.com/{{businessCard.portrait}}')"></a>
+        <div class="bg" style="background-image: url('{{businessCard.portrait}}')"></div>
+        <a href="/about" class="portrait" title="关于" style="background-image: url('{{businessCard.portrait}}')"></a>
         <div class="cont translucent">
             <p class="h4 nickname">{{businessCard.nickname}}</p>
             <p class="self_intro"></p>

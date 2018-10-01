@@ -3,10 +3,10 @@
     <div class="swiper-wrapper">
         {{each}}
         <article class="swiper-slide">
-            <a href="/article?id={{$value.id}}" title="{{$value.title}}" style="background-image: url('http://image.doinblog.com/{{$value.cover}}-banner')">
+            <a href="/article?id={{$value.id}}" title="{{$value.title}}" style="background-image: url('{{$value.cover}}-banner')">
                 <header>
                     <div class="title text-overflow">{{$value.title}}</div>
-                    <div class="bg" style="background-image: url('http://image.doinblog.com/{{$value.cover}}-banner')"></div>
+                    <div class="bg" style="background-image: url('{{$value.cover}}-banner')"></div>
                 </header>
             </a>
         </article>

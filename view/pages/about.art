@@ -10,7 +10,7 @@
 <div id="about">
     {{if individuation.about_banner}}
     <div class="radius translucent about_banner">
-        <img src="http://image.doinblog.com/{{individuation.about_banner}}" alt="">
+        <img src="{{individuation.about_banner}}" alt="">
     </div>
     {{/if}}
     <div class="radius translucent about_cont">

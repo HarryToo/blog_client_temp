@@ -2,7 +2,7 @@
     <article class="row">
         {{if cover.length}}
         <div class="cover radius col-xs-4 col-sm-3" title="{{title}}"
-             style="background-image: url('http://image.doinblog.com/{{cover}}-articleListCover')"></div>
+             style="background-image: url('{{cover}}-articleListCover')"></div>
         {{else}}
         <div class="cover radius flex-center-center col-xs-4 col-sm-3" title="{{title}}">
             <i class="iconfont icon-mianwubiaoqing"></i>

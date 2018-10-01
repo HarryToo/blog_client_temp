@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand flex-start-center" href="/">
-                <span class="logo" title="返回首页" style="background-image: url('http://image.doinblog.com/{{$data}}-blog_logo')"></span>
+                <span class="logo" title="返回首页" style="background-image: url('{{$data}}-blog_logo')"></span>
                 <span id="tp-weather-widget" class="flex-start-center"></span>
             </a>
         </div>

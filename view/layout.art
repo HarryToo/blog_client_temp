@@ -61,7 +61,7 @@
     {{block 'head'}}{{/block}}
 </head>
 <body>
-<div id="backdrop" style="background-image: url('http://image.doinblog.com/{{individuation.backdrop}}')"></div>
+<div id="backdrop" style="background-image: url('{{individuation.backdrop}}')"></div>
 {{include './components/header' individuation.logo}}
 <main>
     <div class="container">

@@ -8,11 +8,8 @@
 }
 
 #about .about_cont {
-    padding: 0 10px;
-}
-
-#about .about_cont p {
-    text-indent: 2em;
+    padding: 10px;
+    line-height: 1.6em;
 }
 
 @media (max-width: 767px) {

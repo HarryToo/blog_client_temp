@@ -59,10 +59,7 @@
 #article .content {
     margin-bottom: 15px;
     padding: 10px;
-}
-
-#article .content p {
-    text-indent: 2em;
+    line-height: 1.6em;
 }
 
 #article .content img {

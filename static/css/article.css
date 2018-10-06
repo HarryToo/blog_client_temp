@@ -62,6 +62,10 @@
     line-height: 1.6em;
 }
 
+#article .content p {
+    text-indent: 2em;
+}
+
 #article .content img {
     max-width: 100%;
     border-radius: 4px;
@@ -85,7 +89,7 @@
     top: 0;
     padding: 5px;
     line-height: normal;
-    color: #999;
+    color: #ccc;
     font-size: 12px;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.04);

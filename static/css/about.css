@@ -12,6 +12,10 @@
     line-height: 1.6em;
 }
 
+#about .about_cont p {
+    text-indent: 2em;
+}
+
 @media (max-width: 767px) {
     #about .radius {
         border-radius: 0;

@@ -51,6 +51,22 @@
     font-size: 13px;
 }
 
+#article header .text .label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    background: -webkit-linear-gradient(left, rgba(65, 184, 131, 0.4), rgba(65, 184, 131, 0.7));
+    background: linear-gradient(to right, rgba(65, 184, 131, 0.4), rgba(65, 184, 131, 0.7));
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+#article header .text .label:hover{
+    transform: scale(1.06);
+}
+
 #article header .text .brief {
     text-indent: 2em;
     color: #777;

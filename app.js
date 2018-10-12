@@ -29,5 +29,5 @@ app.use(async ctx => {
 });
 
 app.listen(3000, () => {
-    console.log('app is running...');
+    console.log('server running at port 3000');
 });

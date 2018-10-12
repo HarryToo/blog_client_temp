@@ -28,9 +28,16 @@ router
             articleList = await api.getArticleList({searchVal, pageIndex});
         } else if (labelId) {
             articleList = await api.getArticleListByLabelId({labelId, pageIndex});
-            labelName = await api.getLabelNameById({id: labelId});
+            let label = await api.getLabelById({id: labelId});
+            labelName = label.name;
         } else {
             articleList = await api.getArticleList({pageIndex});
+        }
+        for (let i in articleList.data) {
+            if (articleList.data[i].label_id) {
+                let labelId = articleList.data[i].label_id;
+                articleList.data[i].label = await api.getLabelById({id: labelId});
+            }
         }
         await ctx.render('./pages/index', {
             individuation: commonData.individuation,

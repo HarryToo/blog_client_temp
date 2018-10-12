@@ -1,5 +1,6 @@
 <div class="side_bar">
-    <div class="radius column business_card">
+    <div class="hidden-xs radius column business_card">
+        <header class="column_header">关于</header>
         <div class="bg" style="background-image: url('{{businessCard.portrait}}')"></div>
         <a href="/about" class="portrait" title="关于" style="background-image: url('{{businessCard.portrait}}')"></a>
         <div class="cont translucent">
@@ -23,9 +24,15 @@
     </div>
 
     {{if banner.length}}
-    <div class="radius column top_article_list">
+    <div class="radius translucent column top_article_list">
+        <header class="column_header">推荐文章</header>
         {{each banner}}
-        {{include '../components/articleItem' $value}}
+        <a href="/article?id={{$value.id}}" class="article_item">
+            <article class="text-overflow">
+                <span class="index">{{$index + 1}}.</span>
+                <span class="title">{{$value.title}}</span>
+            </article>
+        </a>
         {{/each}}
     </div>
     {{/if}}

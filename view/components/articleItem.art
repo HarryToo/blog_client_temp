@@ -1,8 +1,10 @@
 <a href="/article?id={{id}}" class="article_item translucent container-fluid">
+    {{if label}}
+    <div class="text-overflow label_sign" title="{{label_name}}" style="background: {{label.color}}">{{label.name}}</div>
+    {{/if}}
     <article class="row">
         {{if cover.length}}
-        <div class="cover radius col-xs-4 col-sm-3" title="{{title}}"
-             style="background-image: url('{{cover}}-articleListCover')"></div>
+        <div class="cover radius col-xs-4 col-sm-3" title="{{title}}" style="background-image: url('{{cover}}-articleListCover')"></div>
         {{else}}
         <div class="cover radius flex-center-center col-xs-4 col-sm-3" title="{{title}}">
             <i class="iconfont icon-mianwubiaoqing"></i>
@@ -20,6 +22,10 @@
                 </small>
                 <small title="阅读次数：{{hits}}">
                     <i class="iconfont icon-yuedu1"></i>
+                    <span>{{hits}}</span>
+                </small>
+                <small title="评论数：{{hits}}">
+                    <i class="iconfont icon-liuyan"></i>
                     <span>{{hits}}</span>
                 </small>
             </div>

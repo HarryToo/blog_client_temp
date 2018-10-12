@@ -11,10 +11,10 @@
 }
 
 .panel-success > .panel-heading {
-    color: #777;
+    color: #333;
     border: none;
     border-radius: 0;
-    background-color: #e3f4ea;
+    background-color: #fff;
 }
 
 .panel-success > .panel-heading a {
@@ -24,6 +24,7 @@
 .panel-success > .panel-heading a .iconfont {
     padding-right: 6px;
     font-size: 14px;
+    color: #41b883;
 }
 
 .panel-success > .panel-heading a .count {
@@ -31,7 +32,6 @@
 }
 
 .panel-success > .panel-heading a:focus, .panel-success > .panel-heading a:hover {
-    color: #333;
     text-decoration: none;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .panel-group .list-group-item a {
-    color: #555;
+    color: #777;
     transition: 0.2s;
 }
 

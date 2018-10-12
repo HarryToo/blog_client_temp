@@ -69,7 +69,7 @@
             <section class="col-xs-12 col-sm-8 animated fadeInLeft faster left_cont">
                 {{block 'main'}}{{/block}}
             </section>
-            <section class="hidden-xs col-sm-4 animated fadeInRight faster right_cont">
+            <section class="col-xs-12 col-sm-4 animated fadeInRight faster right_cont">
                 {{include './components/sideBar' sideBar}}
             </section>
         </div>

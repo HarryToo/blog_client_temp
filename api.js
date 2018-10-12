@@ -65,13 +65,13 @@ module.exports = {
         return articleList;
     },
     // 获取标签名
-    async getLabelNameById(params) {
-        let labelName = '';
+    async getLabelById(params) {
+        let label = {};
         let {code, data} = await axios.post('/api/label/getLabelById', params);
         if (code === 200) {
-            labelName = data.name;
+            label = data;
         }
-        return labelName;
+        return label;
     },
     // 获取标签总数
     async getLabelTotal() {
@@ -122,6 +122,9 @@ module.exports = {
         let articleDetail = {};
         let {code, data} = await axios.get('/api/article/getArticleById', {params});
         if (code === 200) {
+            if (data.label_id) {
+                data.label = await this.getLabelById({id: data.label_id});
+            }
             articleDetail = data;
         }
         return articleDetail;

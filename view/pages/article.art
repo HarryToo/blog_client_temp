@@ -32,6 +32,9 @@
                     <span>{{articleDetail.update_date}}</span>
                 </span>
             </p>
+            {{if articleDetail.label}}
+            <a class="label" href="/?labelId={{articleDetail.label.id}}" style="background: {{articleDetail.label.color}}" title="更多相关">{{articleDetail.label.name}}</a>
+            {{/if}}
             <p class="brief">{{articleDetail.brief}}</p>
         </div>
     </header>

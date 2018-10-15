@@ -26,7 +26,7 @@
                 </small>
                 <small title="评论数：{{hits}}">
                     <i class="iconfont icon-liuyan"></i>
-                    <span>{{hits}}</span>
+                    <span>{{comment_num}}</span>
                 </small>
             </div>
         </div>

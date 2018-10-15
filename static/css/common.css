@@ -277,10 +277,11 @@ input.form-control, textarea.form-control {
 
 .article_item .text .info small {
     display: inline-block;
+    padding-right: 8px;
 }
 
-.article_item .text .info small:first-child {
-    padding-right: 10px;
+.article_item .text .info small:last-child {
+    padding-right: 0;
 }
 
 .article_item .text .info .iconfont {

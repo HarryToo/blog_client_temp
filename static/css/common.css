@@ -301,6 +301,10 @@ input.form-control, textarea.form-control {
 }
 
 @media (max-width: 767px) {
+    .article_item {
+        height: 100px;
+    }
+
     .article_item .label_sign {
         top: 10px;
         right: auto;

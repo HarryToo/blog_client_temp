@@ -288,9 +288,15 @@ input.form-control, textarea.form-control {
     font-size: 12px;
 }
 
+@media (max-width: 1201px) {
+    .article_item {
+        height: 114px;
+    }
+}
+
 @media (max-width: 991px) {
     .article_item {
-        height: 100px;
+        height: 90px;
     }
 }
 

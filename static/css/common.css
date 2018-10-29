@@ -194,10 +194,6 @@ input.form-control, textarea.form-control {
 }
 
 /*article_list*/
-.article_list {
-    overflow: visible;
-}
-
 .article_item {
     position: relative;
     display: block;

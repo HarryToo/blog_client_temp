@@ -194,14 +194,12 @@ input.form-control, textarea.form-control {
 }
 
 /*article_list*/
-.article_list, .top_article_list {
-    border: 1px solid #eee;
-}
-
 .article_item {
     position: relative;
     display: block;
     height: 136px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
     color: inherit;
     transition: 0.2s;
@@ -209,11 +207,11 @@ input.form-control, textarea.form-control {
 }
 
 .article_item:first-of-type {
+    border-top: 1px solid #eee;
     border-radius: 4px 4px 0 0;
 }
 
 .article_item:last-of-type {
-    border-bottom: none;
     border-radius: 0 0 4px 4px;
 }
 
@@ -435,6 +433,14 @@ input.form-control, textarea.form-control {
 
 .top_article_list .article_item .index {
     margin-right: 4px;
+}
+
+.top_article_list .article_item:nth-of-type(1) {
+    border-radius: 0;
+}
+
+.top_article_list .article_item:nth-of-type(1):hover {
+    border-radius: 4px;
 }
 
 .top_article_list .article_item:nth-of-type(1) .index {

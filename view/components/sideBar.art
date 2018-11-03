@@ -24,7 +24,7 @@
     </div>
 
     {{if banner.length}}
-    <div class="radius translucent column top_article_list">
+    <div class="translucent column top_article_list">
         <header class="column_header">推荐文章</header>
         {{each banner}}
         <a href="/article?id={{$value.id}}" class="article_item">

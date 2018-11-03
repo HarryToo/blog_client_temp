@@ -18,7 +18,7 @@
 {{/if}}
 
 {{if articleList.data && articleList.data.length}}
-<div class="radius article_list">
+<div class="article_list">
     {{each articleList.data}}
     {{include '../components/articleItem' $value}}
     {{/each}}

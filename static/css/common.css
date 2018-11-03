@@ -201,6 +201,15 @@ input.form-control, textarea.form-control {
     border-bottom: 1px solid #eee;
     color: inherit;
     transition: 0.2s;
+    overflow: hidden;
+}
+
+.article_item:first-of-type {
+    border-radius: 4px 4px 0 0;
+}
+
+.article_item:last-of-type {
+    border-radius: 0 0 4px 4px;
 }
 
 .article_item .label_sign {
@@ -221,9 +230,17 @@ input.form-control, textarea.form-control {
     border-left: 2px solid #41b883;
     border-radius: 4px;
     transform: scale(1.015);
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
     background-color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
+}
+
+.right_cont .article_item:hover {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.right_cont .article_item:hover .title {
+    font-weight: normal;
 }
 
 .article_item article {

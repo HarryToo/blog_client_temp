@@ -315,6 +315,8 @@ input.form-control, textarea.form-control {
 @media (max-width: 767px) {
     .article_item {
         height: 100px;
+        border-left: none;
+        border-right: none;
         border-radius: 0 !important;
     }
 
@@ -459,6 +461,10 @@ input.form-control, textarea.form-control {
     .side_bar > .column:last-of-type {
         margin-bottom: 0;
         margin-top: 15px;
+    }
+
+    .side_bar > .column .column_header {
+        border-radius: 0;
     }
 }
 

@@ -4,7 +4,7 @@
         {{each}}
         <article class="swiper-slide">
             <a href="/article?id={{$value.id}}" title="{{$value.title}}" style="background-image: url('{{$value.cover}}-banner')">
-                <header>{{$value.title}}</header>
+                <header class="text-overflow">{{$value.title}}</header>
             </a>
         </article>
         {{/each}}

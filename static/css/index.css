@@ -1,7 +1,7 @@
 /*banner*/
 .banner {
     width: 100%;
-    height: 320px;
+    height: 328px;
     margin-bottom: 15px;
 }
 
@@ -55,6 +55,12 @@
 
 .swiper-pagination-bullet-active {
     background: #41b883;
+}
+
+@media (max-width: 1025px) {
+    .banner {
+        height: 296px;
+    }
 }
 
 @media (max-width: 991px) {

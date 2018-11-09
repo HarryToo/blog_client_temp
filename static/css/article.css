@@ -63,7 +63,7 @@
     transition: 0.3s;
 }
 
-#article header .text .label:hover{
+#article header .text .label:hover {
     transform: scale(1.06);
 }
 
@@ -80,6 +80,15 @@
 
 #article .content p {
     text-indent: 2em;
+}
+
+#article .content blockquote {
+    font-size: 17px;
+    border-left: 4px solid rgba(65, 184, 131, 0.4);
+}
+
+#article .content blockquote p {
+    text-indent: 0;
 }
 
 #article .content img {

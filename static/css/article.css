@@ -83,8 +83,9 @@
 }
 
 #article .content blockquote {
-    font-size: 17px;
-    border-left: 4px solid rgba(65, 184, 131, 0.4);
+    font-size: 16px;
+    border-radius: 4px;
+    border-left: 4px solid rgba(65, 184, 131, 0.5);
     background-color: #f5f5f5;
 }
 
@@ -133,6 +134,7 @@
 
 #article .content pre code {
     padding: 10px;
+    line-height: 22px;
     white-space: pre;
 }
 

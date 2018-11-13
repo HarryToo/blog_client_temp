@@ -85,6 +85,7 @@
 #article .content blockquote {
     font-size: 17px;
     border-left: 4px solid rgba(65, 184, 131, 0.4);
+    background-color: #f5f5f5;
 }
 
 #article .content blockquote p {

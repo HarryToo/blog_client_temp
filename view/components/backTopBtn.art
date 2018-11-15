@@ -4,10 +4,10 @@
         $('#back_top_btn').on('click', function () {
             // $(document).scrollTop(0);
             if ($('html').scrollTop()) {
-                $('html').animate({scrollTop: 0}, 500);
+                $('html').animate({scrollTop: 0}, 400);
                 return false;
             }
-            $('body').animate({scrollTop: 0}, 500);
+            $('body').animate({scrollTop: 0}, 400);
             return false;
         });
         $(document).on('scroll', function () {

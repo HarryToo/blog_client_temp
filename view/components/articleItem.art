@@ -16,17 +16,13 @@
                 <p class="text-overflow small brief" title="{{brief}}">{{brief}}</p>
             </header>
             <div class="info">
-                <small title="发布时间：{{date}}">
+                <small class="pull-left" title="发布时间：{{date}}">
                     <i class="iconfont icon-yk_shijian"></i>
                     <span>{{date}}</span>
                 </small>
-                <small title="阅读次数：{{hits}}">
+                <small class="pull-right" title="阅读次数：{{hits}}">
                     <i class="iconfont icon-yuedu1"></i>
                     <span>{{hits}}</span>
-                </small>
-                <small title="评论数：{{hits}}">
-                    <i class="iconfont icon-liuyan"></i>
-                    <span>{{comment_num}}</span>
                 </small>
             </div>
         </div>

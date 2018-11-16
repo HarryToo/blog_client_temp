@@ -168,8 +168,19 @@
     margin: 0 0 10px;
 }
 
+#article .gt-container p {
+    font-size: 15px;
+}
+
 #article .gt-container a {
     color: #41b883;
+}
+
+#article .gt-container .gt-header-textarea {
+    height: 100px !important;
+    resize: vertical !important;
+    -webkit-appearance: none;
+    outline: none;
 }
 
 #article .gt-container .gt-svg svg {
@@ -184,7 +195,7 @@
     border-color: #41b883;
 }
 
-#article .gt-container .gt-btn-login {
+#article .gt-container .gt-btn-login, #article .gt-container .gt-btn-public {
     background-color: #41b883;
 }
 
@@ -196,97 +207,9 @@
     opacity: 0.9;
 }
 
-#article .comment .blog_comment_way {
-    display: none;
-}
-
-#article .comment .header {
-    padding: 10px;
-    color: #999;
-}
-
-#article .comment .header .iconfont {
+#article .gt-comments-null {
     font-size: 14px;
-}
-
-#article .comment .empty {
-    padding: 20px 0;
-}
-
-#article .comment_form textarea {
-    resize: vertical;
-    -webkit-appearance: none;
-}
-
-#article .comment_form input {
-    -webkit-appearance: none;
-}
-
-#article .comment_list {
-    border-top: 1px dashed #eee;
-}
-
-#article .comment_list .comment_item {
-    display: -webkit-flex;
-    display: flex;
-}
-
-#article .comment_list .comment_item:nth-child(2n+2) {
-    background-color: rgba(0, 0, 0, 0.02);
-}
-
-#article .comment_list .comment_item:last-child {
-    padding-bottom: 15px;
-}
-
-#article .comment_list .comment_item .user {
-    width: 14%;
-    text-align: center;
     color: #999;
-}
-
-#article .comment_list .comment_item .user .index {
-    color: #bbb;
-}
-
-#article .comment_list .comment_item .user .iconfont {
-    font-size: 34px;
-}
-
-#article .comment_list .comment_item .user .name {
-    font-size: 12px;
-}
-
-#article .comment_list .comment_item .text {
-    width: 86%;
-    padding-left: 10px;
-}
-
-#article .comment_list .comment_item .text .comment_date {
-    padding: 6px 0;
-    color: #999;
-    font-size: 12px;
-}
-
-#article .comment_list .comment_item .text .reply {
-    display: -webkit-flex;
-    display: flex;
-    padding: 3px 10px;
-    border-radius: 4px;
-    background-color: rgba(65, 184, 131, 0.1);
-}
-
-#article .comment_list .comment_item .text .reply .webmaster {
-    width: 5em;
-    color: #69b893;
-}
-
-#article .comment_list .comment_item .text .reply .reply_date {
-    display: block;
-    line-height: normal;
-    padding-top: 6px;
-    color: #999;
-    font-size: 12px;
 }
 
 @media (max-width: 767px) {

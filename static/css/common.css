@@ -288,15 +288,6 @@ input.form-control, textarea.form-control {
     color: #999;
 }
 
-.article_item .text .info small {
-    display: inline-block;
-    padding-right: 8px;
-}
-
-.article_item .text .info small:last-child {
-    padding-right: 0;
-}
-
 .article_item .text .info .iconfont {
     font-size: 12px;
 }

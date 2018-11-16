@@ -128,19 +128,5 @@ module.exports = {
             articleDetail = data;
         }
         return articleDetail;
-    },
-    // 获取文章评论数据
-    async getCommentList(params) {
-        let commentList = [];
-        let {code, data} = await axios.get('/api/comment/getCommentByArticleId', {params});
-        if (code === 200) {
-            commentList = data;
-        }
-        return commentList;
-    },
-    // 发表文章评论
-    async addComment(params) {
-        let res = await axios.post('/api/comment/addComment', params);
-        return res;
     }
 };

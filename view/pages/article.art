@@ -45,54 +45,6 @@
     </div>
     <div class="radius translucent comment">
         <div id="gitalk-container"></div>
-        <div class="blog_comment_way">
-            <div class="header">
-                <i class="iconfont icon-mn_hudong"></i>
-                <span>评论</span>
-            </div>
-            <div class="comment_form">
-                <div class="form-group">
-                    <textarea class="form-control" rows="5" placeholder="说点啥子.." id="comment_content"></textarea>
-                </div>
-                <div class="form-group row">
-                    <div class="col-xs-8">
-                        <input type="text" class="form-control" placeholder="名字或联系方式（建议填写）" id="comment_user"/>
-                    </div>
-                    <div class="col-xs-4">
-                        <button class="form-control btn btn-success" id="comment_btn" onclick="submitComment({{articleDetail.id}})">发表</button>
-                    </div>
-                </div>
-            </div>
-            <div class="comment_list">
-                {{if commentList.length}}
-                {{each commentList}}
-                <div class="comment_item">
-                    <div class="text-overflow user" title="{{$value.username}}">
-                        <i class="iconfont icon-wawa"></i>
-                        <div class="text-overflow name">{{$value.username}}</div>
-                        <div class="index">#{{commentList.length-$index}}</div>
-                    </div>
-                    <div class="text">
-                        <div class="cont">{{$value.content}}</div>
-                        <div class="comment_date">{{$value.date}}</div>
-                        {{if $value.reply}}
-                        <div class="reply">
-                            <span class="webmaster">站长回复:</span>
-                            <div class="text">
-                                <span>{{$value.reply}}</span>
-                                <span class="reply_date">{{$value.reply_date}}</span>
-                            </div>
-                        </div>
-                        {{/if}}
-                    </div>
-                </div>
-                {{/each}}
-                {{else}}
-                {{include '../components/empty'}}
-                <p class="text-center" style="color: #999;">来做第一个留言的人吧！</p>
-                {{/if}}
-            </div>
-        </div>
     </div>
 </article>
 
@@ -134,69 +86,5 @@
             $this.find('.iconfont').removeClass('icon-duigou').addClass('icon-copy');
         }, 1000);
     });
-
-    function getCurrTime() {
-        var datetime = new Date();
-        var year = datetime.getFullYear();
-        var month = datetime.getMonth() + 1;
-        var date = datetime.getDate();
-        var hour = datetime.getHours();
-        var minutes = datetime.getMinutes();
-        if (month < 10) {
-            month = "0" + month;
-        }
-        if (date < 10) {
-            date = "0" + date;
-        }
-        if (hour < 10) {
-            hour = "0" + hour;
-        }
-        if (minutes < 10) {
-            minutes = "0" + minutes;
-        }
-        var time = year + "-" + month + "-" + date + " " + hour + ":" + minutes;
-        return time;
-    }
-
-    // comment
-    function submitComment(articleId) {
-        if (!$('#comment_content').val().trim().length) {
-            $('#comment_content').focus().parent().addClass('has-error');
-        } else {
-            $('#comment_content').parent().removeClass('has-error');
-            $.ajax({
-                url: '/article_comment',
-                method: 'post',
-                dataType: 'json',
-                data: {
-                    articleId: articleId,
-                    content: $('#comment_content').val().trim(),
-                    username: $('#comment_user').val().trim()
-                },
-                success: function (ret) {
-                    if (ret.code === 200) {
-                        $('#comment_btn').addClass('disabled').text('发表成功').blur();
-                        setTimeout(function () {
-                            $('#comment_btn').removeClass('disabled').text('发表');
-                        }, 1000);
-                        var html = '<div class="comment_item">' +
-                            '<div class="text-overflow user" title="' + ($('#comment_user').val().trim() || "匿名") + '">' +
-                            '<i class="iconfont icon-wawa"></i>' +
-                            '<div class="text-overflow name">' + ($('#comment_user').val().trim() || "匿名") + '</div>' +
-                            '<div class="index">#' + ($('.comment_item').length + 1) + '</div>' +
-                            '</div>' +
-                            '<div class="text">' +
-                            '<div class="cont">' + $('#comment_content').val().trim() + '</div>' +
-                            '<div class="comment_date">' + getCurrTime() + '</div>' +
-                            '</div>' +
-                            '</div>';
-                        $('.comment_list').prepend(html);
-                        $('#comment_content').val('');
-                        $('#comment_user').val('');
-                    }
-                }
-            });
-        }
-    }
 </script>
 {{/block}}

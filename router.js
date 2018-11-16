@@ -101,22 +101,11 @@ router
         let id = ctx.query.id;
         await api.updateArticleHits({id});
         let articleDetail = await api.getArticleDetail({id});
-        let commentList = await api.getCommentList({articleId: id});
         await ctx.render('./pages/article', {
             individuation: commonData.individuation,
             sideBar: commonData.sideBar,
-            articleDetail,
-            commentList
+            articleDetail
         });
-    })
-    .post('/article_comment', async ctx => {
-        let params = {
-            articleId: ctx.request.body.articleId,
-            content: ctx.request.body.content,
-            username: ctx.request.body.username
-        };
-        let res = await api.addComment(params);
-        ctx.body = res;
     });
 
 module.exports = {router, getCommonData};

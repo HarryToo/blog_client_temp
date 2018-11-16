@@ -5,6 +5,8 @@
 {{block 'head'}}
 <script src="https://cdn.staticfile.org/highlight.js/9.12.0/highlight.min.js"></script>
 <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 <link rel="stylesheet" href="/css/article.css">
 {{/block}}
 
@@ -42,50 +44,54 @@
         {{@ articleDetail.content}}
     </div>
     <div class="radius translucent comment">
-        <div class="header">
-            <i class="iconfont icon-mn_hudong"></i>
-            <span>评论</span>
-        </div>
-        <div class="comment_form">
-            <div class="form-group">
-                <textarea class="form-control" rows="5" placeholder="说点啥子.." id="comment_content"></textarea>
+        <div id="gitalk-container"></div>
+        <div class="blog_comment_way">
+            <div class="header">
+                <i class="iconfont icon-mn_hudong"></i>
+                <span>评论</span>
             </div>
-            <div class="form-group row">
-                <div class="col-xs-8">
-                    <input type="text" class="form-control" placeholder="名字或联系方式（建议填写）" id="comment_user"/>
+            <div class="comment_form">
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="说点啥子.." id="comment_content"></textarea>
                 </div>
-                <div class="col-xs-4">
-                    <button class="form-control btn btn-success" id="comment_btn" onclick="submitComment({{articleDetail.id}})">发表</button>
-                </div>
-            </div>
-        </div>
-        <div class="comment_list">
-            {{if commentList.length}}
-            {{each commentList}}
-            <div class="comment_item">
-                <div class="text-overflow user" title="{{$value.username}}">
-                    <i class="iconfont icon-wawa"></i>
-                    <div class="text-overflow name">{{$value.username}}</div>
-                    <div class="index">#{{commentList.length-$index}}</div>
-                </div>
-                <div class="text">
-                    <div class="cont">{{$value.content}}</div>
-                    <div class="comment_date">{{$value.date}}</div>
-                    {{if $value.reply}}
-                    <div class="reply">
-                        <span class="webmaster">站长回复:</span>
-                        <div class="text">
-                            <span>{{$value.reply}}</span>
-                            <span class="reply_date">{{$value.reply_date}}</span>
-                        </div>
+                <div class="form-group row">
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" placeholder="名字或联系方式（建议填写）" id="comment_user"/>
                     </div>
-                    {{/if}}
+                    <div class="col-xs-4">
+                        <button class="form-control btn btn-success" id="comment_btn" onclick="submitComment({{articleDetail.id}})">发表</button>
+                    </div>
                 </div>
             </div>
-            {{/each}}
-            {{else}}
-            {{include '../components/empty'}}
-            {{/if}}
+            <div class="comment_list">
+                {{if commentList.length}}
+                {{each commentList}}
+                <div class="comment_item">
+                    <div class="text-overflow user" title="{{$value.username}}">
+                        <i class="iconfont icon-wawa"></i>
+                        <div class="text-overflow name">{{$value.username}}</div>
+                        <div class="index">#{{commentList.length-$index}}</div>
+                    </div>
+                    <div class="text">
+                        <div class="cont">{{$value.content}}</div>
+                        <div class="comment_date">{{$value.date}}</div>
+                        {{if $value.reply}}
+                        <div class="reply">
+                            <span class="webmaster">站长回复:</span>
+                            <div class="text">
+                                <span>{{$value.reply}}</span>
+                                <span class="reply_date">{{$value.reply_date}}</span>
+                            </div>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/each}}
+                {{else}}
+                {{include '../components/empty'}}
+                <p class="text-center" style="color: #999;">来做第一个留言的人吧！</p>
+                {{/if}}
+            </div>
         </div>
     </div>
 </article>
@@ -96,7 +102,20 @@
             $(item).before('<div class="copy_btn" title="复制代码块"><i class="iconfont icon-copy"></i></div>');
             hljs.highlightBlock(item);
         });
+        getTalkInit();
     });
+
+    function getTalkInit() {
+        var gitalk = new Gitalk({
+            clientID: 'dcbd781903e19430a564',
+            clientSecret: '4912996fe281b96e727559e04164669709168ce8',
+            repo: 'blog_comments',
+            owner: 'duhang666',
+            admin: ['duhang666'],
+            id: '{{articleDetail.id}}'
+        });
+        gitalk.render('gitalk-container');
+    }
 
     // copy
     $('.content pre').on('click', '.copy_btn', function () {

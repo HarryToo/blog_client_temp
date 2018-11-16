@@ -4,15 +4,15 @@
         <div class="bg" style="background-image: url('{{businessCard.portrait}}')"></div>
         <a href="/about" class="portrait" title="关于" style="background-image: url('{{businessCard.portrait}}')"></a>
         <div class="cont translucent">
-            <p class="h4 nickname">{{businessCard.nickname}}</p>
-            <p class="self_intro"></p>
+            <p class="h5 nickname">{{businessCard.nickname}}</p>
+            <p class="h6 self_intro"></p>
             <div class="statistics_list">
                 <div>
-                    <p class="h4 num">{{businessCard.articleTotal}}</p>
+                    <p class="h5 num">{{businessCard.articleTotal}}</p>
                     <p class="column">文章</p>
                 </div>
                 <div>
-                    <p class="h4 num">{{businessCard.labelTotal}}</p>
+                    <p class="h5 num">{{businessCard.labelTotal}}</p>
                     <p class="column">标签</p>
                 </div>
             </div>

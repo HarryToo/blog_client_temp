@@ -1,7 +1,9 @@
 /*layout*/
 body {
     padding-top: 65px;
+    font-size: 15px;
     color: #555;
+    font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Helvetica, Arial, Verdana, sans-serif;
 }
 
 main {
@@ -10,6 +12,7 @@ main {
 }
 
 main .right_cont {
+    padding-left: 0;
     position: -webkit-sticky;
     position: sticky;
     top: 66px;
@@ -28,16 +31,9 @@ main .right_cont {
     background-attachment: fixed;
 }
 
-@media (max-width: 1025px) {
-    main .right_cont {
-        padding-left: 0;
-    }
-}
-
 @media (max-width: 767px) {
     body {
         padding-top: 50px;
-        font-size: 15px;
     }
 
     main {
@@ -119,6 +115,7 @@ main .right_cont {
 }
 
 #tp-weather-widget .tpwidget_title_hook, #tp-weather-widget .tpwidget_icon_hook, #tp-weather-widget .tpwidget_text_hook {
+    font-weight: normal;
     color: #999;
 }
 
@@ -132,7 +129,7 @@ main .right_cont {
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #555;
+    color: #666;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
@@ -197,7 +194,7 @@ input.form-control, textarea.form-control {
 .article_item {
     position: relative;
     display: block;
-    height: 136px;
+    height: 150px;
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
@@ -231,16 +228,17 @@ input.form-control, textarea.form-control {
 }
 
 .article_item:hover {
-    border-left: 2px solid #41b883;
+    border-left: 4px solid #41b883;
     border-radius: 4px;
-    transform: scale(1.015);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    background-color: rgba(255, 255, 255, 0.9);
+    transform-origin: center bottom;
+    transform: scale(1.02);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.94);
     text-decoration: none;
 }
 
 .right_cont .article_item:hover {
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
 }
 
 .right_cont .article_item:hover .title {
@@ -271,13 +269,11 @@ input.form-control, textarea.form-control {
 }
 
 .article_item .title {
-    color: #555;
     transition: 0.2s;
 }
 
 .article_item:hover .title {
     color: #41b883;
-    font-weight: bold;
 }
 
 .article_item .text header .brief {
@@ -288,25 +284,33 @@ input.form-control, textarea.form-control {
     color: #999;
 }
 
+.article_item .text .info small {
+    padding-right: 16px;
+}
+
+.article_item .text .info small:last-of-type {
+    padding-right: 0;
+}
+
 .article_item .text .info .iconfont {
     font-size: 12px;
 }
 
 @media (max-width: 1201px) {
     .article_item {
-        height: 114px;
+        height: 130px;
     }
 }
 
 @media (max-width: 991px) {
     .article_item {
-        height: 90px;
+        height: 106px;
     }
 }
 
 @media (max-width: 767px) {
     .article_item {
-        height: 100px;
+        height: 103px;
         border-left: none;
         border-right: none;
         border-radius: 0 !important;
@@ -344,7 +348,7 @@ input.form-control, textarea.form-control {
 }
 
 .business_card .bg {
-    height: 120px;
+    height: 100px;
     background-color: rgba(65, 184, 131, 0.5);
     background-repeat: no-repeat;
     background-position: center 18%;
@@ -355,7 +359,7 @@ input.form-control, textarea.form-control {
 
 .business_card .portrait {
     position: absolute;
-    top: 100px;
+    top: 60px;
     left: calc(50% - 45px);
     width: 90px;
     height: 90px;
@@ -374,7 +378,7 @@ input.form-control, textarea.form-control {
 }
 
 .business_card .cont {
-    padding-top: 40px;
+    padding-top: 20px;
     text-align: center;
     overflow: hidden;
 }
@@ -393,6 +397,7 @@ input.form-control, textarea.form-control {
 }
 
 .business_card .cont .statistics_list .column {
+    margin-bottom: 4px;
     color: #888;
     font-size: 12px;
 }
@@ -423,6 +428,7 @@ input.form-control, textarea.form-control {
 .top_article_list .article_item {
     display: block;
     height: auto;
+    font-size: 14px;
 }
 
 .top_article_list .article_item .index {

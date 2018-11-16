@@ -80,6 +80,7 @@
 
 #article .content p {
     text-indent: 2em;
+    line-height: 1.7em;
 }
 
 #article .content blockquote {
@@ -174,6 +175,10 @@
 
 #article .gt-container a {
     color: #41b883;
+}
+
+.gt-container .gt-link {
+    border-color: #41b883;
 }
 
 #article .gt-container .gt-header-textarea {

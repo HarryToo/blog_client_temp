@@ -29,17 +29,12 @@
 }
 
 .diary_list {
-    padding: 14px 10px 0;
     overflow: hidden;
 }
 
 .diary_list .diary_item {
-    padding: 14px 0 4px;
+    padding: 22px 10px;
     border-bottom: 1px solid #eee;
-}
-
-.diary_list .diary_item:first-child {
-    padding-top: 0;
 }
 
 .diary_list .diary_item:last-child {

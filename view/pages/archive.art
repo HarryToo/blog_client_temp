@@ -27,7 +27,7 @@
                     {{each $value.articleList}}
                     <li class="list-group-item">
                         <article class="flex-between-center">
-                            <a href="/article?id={{$value.id}}">{{$value.title}}</a>
+                            <a href="/article?id={{$value.id}}">● {{$value.title}}</a>
                             <small>
                                 <i class="iconfont icon-yk_shijian"></i>
                                 <span>{{$value.date.substring($value.date.indexOf('-')+1)}}</span>

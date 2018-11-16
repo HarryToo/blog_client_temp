@@ -464,6 +464,10 @@ input.form-control, textarea.form-control {
     .side_bar > .column .column_header {
         border-radius: 0;
     }
+
+    .top_article_list .article_item {
+        font-size: 15px;
+    }
 }
 
 /*footer*/

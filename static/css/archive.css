@@ -11,6 +11,7 @@
 }
 
 .panel-success > .panel-heading {
+    padding: 15px;
     color: #333;
     border: none;
     border-radius: 0;
@@ -23,7 +24,7 @@
 
 .panel-success > .panel-heading a .iconfont {
     padding-right: 6px;
-    font-size: 14px;
+    font-size: 15px;
     color: #41b883;
 }
 

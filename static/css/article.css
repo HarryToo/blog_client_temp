@@ -182,7 +182,6 @@
 }
 
 #article .gt-container .gt-header-textarea {
-    height: 100px !important;
     resize: vertical !important;
     -webkit-appearance: none;
     outline: none;

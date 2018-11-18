@@ -25,15 +25,21 @@ main .right_cont {
     z-index: -1;
     width: 100vw;
     height: 100vh;
+    background-color: #f1f7f5;
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
-    background-attachment: fixed;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
 }
 
 @media (max-width: 767px) {
     body {
         padding-top: 50px;
+    }
+
+    #backdrop {
+        background-image: none !important;
     }
 
     main {
@@ -233,7 +239,7 @@ input.form-control, textarea.form-control {
     transform-origin: center bottom;
     transform: scale(1.02);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.94);
+    background-color: rgba(255, 255, 255, 0.98);
     text-decoration: none;
 }
 
@@ -496,10 +502,10 @@ footer span {
 /*back top btn*/
 #back_top_btn {
     position: fixed;
-    bottom: 30px;
+    bottom: 90px;
     right: -75px;
-    width: 45px;
-    height: 45px;
+    width: 46px;
+    height: 46px;
     transform: rotate(0);
     background-color: rgba(255, 255, 255, 0.95);
     cursor: pointer;
@@ -518,7 +524,7 @@ footer span {
 
 @media (max-width: 767px) {
     #back_top_btn {
-        bottom: 15px;
+        bottom: 50px;
         right: -60px;
     }
 

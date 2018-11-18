@@ -8,6 +8,7 @@
 }
 
 #about .about_cont {
+    margin-bottom: 15px;
     padding: 10px;
     line-height: 1.7em;
 }
@@ -38,6 +39,61 @@
     box-sizing: border-box;
 }
 
+#about .comment {
+    padding: 10px;
+}
+
+#about .gt-container .gt-meta {
+    margin: 0 0 10px;
+}
+
+#about .gt-container p {
+    font-size: 15px;
+}
+
+#about .gt-container a {
+    color: #41b883;
+}
+
+.gt-container .gt-link {
+    border-color: #41b883;
+}
+
+#about .gt-container .gt-header-textarea {
+    resize: vertical !important;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+#about .gt-container .gt-svg svg {
+    fill: #339067;
+}
+
+#about .gt-container .gt-header-controls-tip {
+    color: #41b883;
+}
+
+#about .gt-container .gt-btn {
+    border-color: #41b883;
+}
+
+#about .gt-container .gt-btn-login, #about .gt-container .gt-btn-public {
+    background-color: #41b883;
+}
+
+#about .gt-container .gt-btn-preview {
+    color: #41b883;
+}
+
+#about .gt-container .gt-btn:hover {
+    opacity: 0.9;
+}
+
+#about .gt-comments-null {
+    font-size: 14px;
+    color: #999;
+}
+
 @media (max-width: 767px) {
     #about .radius {
         border-radius: 0;
@@ -46,5 +102,11 @@
 
     #about .about_banner {
         margin-bottom: 0;
+    }
+
+    #about .about_cont {
+        margin-bottom: 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
     }
 }

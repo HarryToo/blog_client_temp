@@ -3,6 +3,8 @@
 {{block 'description'}}关于本博客和站长{{/block}}
 {{block 'title'}}关于{{/block}}
 {{block 'head'}}
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 <link rel="stylesheet" href="/css/about.css">
 {{/block}}
 
@@ -16,5 +18,27 @@
     <div class="radius translucent about_cont">
         {{@ individuation.about}}
     </div>
+    <div class="radius translucent comment">
+        <div id="gitalk-container"></div>
+    </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        getTalkInit();
+    });
+
+    function getTalkInit() {
+        var gitalk = new Gitalk({
+            clientID: 'dcbd781903e19430a564',
+            clientSecret: '4912996fe281b96e727559e04164669709168ce8',
+            repo: 'blog_comments',
+            owner: 'duhang666',
+            admin: ['duhang666'],
+            id: '0',
+            title: '博客留言'
+        });
+        gitalk.render('gitalk-container');
+    }
+</script>
 {{/block}}

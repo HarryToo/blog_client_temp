@@ -12,7 +12,7 @@
 
 .panel-success > .panel-heading {
     padding: 15px;
-    color: #333;
+    color: #555;
     border: none;
     border-radius: 0;
     background-color: #fff;
@@ -41,6 +41,7 @@
 }
 
 .panel-group .list-group-item {
+    font-size: 14px;
     border-style: dashed;
     border-color: #eee;
     background-color: rgba(255, 255, 255, 0.6);
@@ -54,6 +55,11 @@
 .panel-group .list-group-item a:focus, .panel-group .list-group-item a:hover {
     color: #41b883;
     text-decoration: none;
+}
+
+.panel-group .list-group-item a span {
+    color: #41b883;
+    padding-right: 10px;
 }
 
 .panel-group .list-group-item small {

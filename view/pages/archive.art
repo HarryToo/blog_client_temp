@@ -10,27 +10,31 @@
 {{if archiveList.data && archiveList.data.length}}
 <div class="radius translucent" id="archive">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        {{each archiveList.data}}
+        {{each archiveList.data monthItem monthIndex}}
         <div class="panel panel-success">
-            <div class="panel-heading" role="tab" id="heading_{{$index}}">
+            <div class="panel-heading" role="tab" id="heading_{{monthIndex}}">
                 <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{$index}}" aria-expanded="true" aria-controls="collapse_{{$index}}">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{monthIndex}}" aria-expanded="true" aria-controls="collapse_{{monthIndex}}">
                         <i class="iconfont icon-rili"></i>
-                        <span>{{$value.month}}</span>
-                        <span class="count">（{{$value.articleList.length}}）</span>
+                        <span>{{monthItem.month}}</span>
+                        <span class="count">（{{monthItem.articleList.length}}）</span>
                     </a>
                 </h4>
             </div>
-            <div id="collapse_{{$index}}" class="panel-collapse collapse {{if $index===0}}in{{/if}}" role="tabpanel"
-                 aria-labelledby="heading_{{$index}}">
+            <div id="collapse_{{monthIndex}}" class="panel-collapse collapse {{if monthIndex===0}}in{{/if}}" role="tabpanel"
+                 aria-labelledby="heading_{{monthIndex}}">
                 <ul class="list-group">
-                    {{each $value.articleList}}
+                    {{each monthItem.articleList dayItem dayIndex}}
                     <li class="list-group-item">
                         <article class="flex-between-center">
-                            <a href="/article?id={{$value.id}}">● {{$value.title}}</a>
+                            {{if dayIndex < monthItem.articleList.length - 1}}
+                            <a href="/article?id={{dayItem.id}}"><span>├</span>{{dayItem.title}}</a>
+                            {{else}}
+                            <a href="/article?id={{dayItem.id}}"><span>└</span>{{dayItem.title}}</a>
+                            {{/if}}
                             <small>
                                 <i class="iconfont icon-yk_shijian"></i>
-                                <span>{{$value.date.substring($value.date.indexOf('-')+1)}}</span>
+                                <span>{{dayItem.date.substring(dayItem.date.indexOf('-')+1)}}</span>
                             </small>
                         </article>
                     </li>

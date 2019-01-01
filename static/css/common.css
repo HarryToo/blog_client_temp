@@ -29,8 +29,8 @@ main .right_cont {
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
-    -webkit-filter: blur(10px);
-    filter: blur(10px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
 }
 
 @media (max-width: 767px) {
@@ -100,6 +100,7 @@ main .right_cont {
 /*header*/
 .navbar-default {
     background: rgba(255, 255, 255, 0.94);
+    border-color: #f5f5f5;
 }
 
 .navbar-brand {
@@ -208,21 +209,21 @@ input.form-control, textarea.form-control {
     position: relative;
     display: block;
     height: 150px;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-left: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
     color: inherit;
     transition: 0.2s;
     overflow: hidden;
 }
 
 .article_item:first-of-type {
-    border-top: 1px solid #eee;
-    border-radius: 4px 4px 0 0;
+    border-top: 1px solid #f5f5f5;
+    border-radius: 3px 3px 0 0;
 }
 
 .article_item:last-of-type {
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 3px 3px;
 }
 
 .article_item .label_sign {
@@ -235,23 +236,23 @@ input.form-control, textarea.form-control {
     text-align: center;
     font-size: 12px;
     color: #fff;
-    border-radius: 0 0 0 4px;
+    border-radius: 0 0 0 3px;
     background: -webkit-linear-gradient(left, rgba(65, 184, 131, 0.4), rgba(65, 184, 131, 0.7));
     background: linear-gradient(to right, rgba(65, 184, 131, 0.4), rgba(65, 184, 131, 0.7));
 }
 
 .article_item:hover {
     border-left: 4px solid #41b883;
-    border-radius: 4px;
+    border-radius: 3px;
     transform-origin: center bottom;
     transform: scale(1.02);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
     background-color: rgba(255, 255, 255, 0.98);
     text-decoration: none;
 }
 
 .right_cont .article_item:hover {
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
 }
 
 .right_cont .article_item:hover .title {
@@ -336,7 +337,7 @@ input.form-control, textarea.form-control {
         z-index: 2;
         padding: 0 2px;
         width: 4em;
-        border-radius: 4px 0 4px 0;
+        border-radius: 3px 0 3px 0;
     }
 }
 
@@ -347,8 +348,9 @@ input.form-control, textarea.form-control {
 
 .side_bar > .column .column_header {
     padding: 6px 10px;
+    font-size: 14px;
     color: #fff;
-    border-radius: 4px 4px 0 0;
+    border-radius: 3px 3px 0 0;
     background-color: #41b883;
 }
 
@@ -357,11 +359,19 @@ input.form-control, textarea.form-control {
 }
 
 .business_card {
+    overflow: hidden;
+}
+
+.business_card .business_cont {
     position: relative;
+    border: 1px solid #f5f5f5;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
 }
 
 .business_card .bg {
-    height: 100px;
+    height: 94px;
     background-color: rgba(65, 184, 131, 0.5);
     background-repeat: no-repeat;
     background-position: center 18%;
@@ -372,7 +382,7 @@ input.form-control, textarea.form-control {
 
 .business_card .portrait {
     position: absolute;
-    top: 60px;
+    top: 26px;
     left: calc(50% - 45px);
     width: 90px;
     height: 90px;
@@ -391,7 +401,7 @@ input.form-control, textarea.form-control {
 }
 
 .business_card .cont {
-    padding-top: 20px;
+    padding-top: 28px;
     text-align: center;
     overflow: hidden;
 }
@@ -453,11 +463,11 @@ input.form-control, textarea.form-control {
 }
 
 .top_article_list .article_item:nth-of-type(1):hover {
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 .top_article_list .article_item:nth-of-type(1) .index {
-    color: #ff3d33;
+    color: #ff3126;
 }
 
 .top_article_list .article_item:nth-of-type(2) .index {
@@ -486,7 +496,7 @@ input.form-control, textarea.form-control {
 /*footer*/
 footer {
     height: 40px;
-    border-top: 1px solid #e7e7e7;
+    border-top: 1px solid #f5f5f5;
     background: rgba(255, 255, 255, 0.94);
 }
 
@@ -509,7 +519,7 @@ footer span {
 /*back top btn*/
 #back_top_btn {
     position: fixed;
-    bottom: 90px;
+    bottom: 80px;
     right: -75px;
     width: 46px;
     height: 46px;

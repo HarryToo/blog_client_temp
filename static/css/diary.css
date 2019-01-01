@@ -7,7 +7,6 @@
 }
 
 #calendar .layui-laydate {
-    border-bottom: 1px solid #cce2d5;
     box-shadow: none;
 }
 
@@ -29,12 +28,13 @@
 }
 
 .diary_list {
+    border-top: 1px solid #f5f5f5;
     overflow: hidden;
 }
 
 .diary_list .diary_item {
     padding: 22px 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f5f5f5;
 }
 
 .diary_list .diary_item:last-child {

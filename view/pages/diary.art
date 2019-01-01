@@ -72,14 +72,13 @@
                     '</div>';
             }
             $('#diary .empty').hide();
-            $('#diary .diary_list').show().html(html);
+            $('#diary .diary_list').html(html);
         } else {
-            $('#diary .diary_list').hide();
-            if ($('#diary .empty').length) {
-                $('#diary .empty').show();
-            } else {
-                $('#diary').append('<div class="empty"><i class="iconfont icon-icon-test animated rubberBand infinite"></i><p>no more ..</p></div>');
+            $('#diary .diary_item').remove();
+            if ($('#diary .diary_list .empty').length) {
+                $('#diary .diary_list .empty').remove();
             }
+            $('#diary .diary_list').append('<div class="empty animated bounceInDown fast"><i class="iconfont icon-icon-test animated rubberBand infinite"></i><p>no more ..</p></div>');
         }
     }
 </script>

@@ -1,25 +1,27 @@
 <div class="side_bar">
-    <div class="hidden-xs radius column business_card">
+    <div class="hidden-xs column business_card">
         <header class="column_header">关于</header>
-        <div class="bg" style="background-image: url('{{businessCard.portrait}}')"></div>
-        <a href="/about" class="portrait" title="关于" style="background-image: url('{{businessCard.portrait}}')"></a>
-        <div class="cont translucent">
-            <p class="h5 nickname">{{businessCard.nickname}}</p>
-            <p class="h6 self_intro"></p>
-            <div class="statistics_list">
-                <div>
-                    <p class="h5 num">{{businessCard.articleTotal}}</p>
-                    <p class="column">文章</p>
+        <div class="business_cont">
+            <div class="bg" style="background-image: url('{{businessCard.portrait}}')"></div>
+            <a href="/about" class="portrait" title="关于" style="background-image: url('{{businessCard.portrait}}')"></a>
+            <div class="cont translucent">
+                <p class="h5 nickname">{{businessCard.nickname}}</p>
+                <p class="h6 self_intro"></p>
+                <div class="statistics_list">
+                    <div>
+                        <p class="h5 num">{{businessCard.articleTotal}}</p>
+                        <p class="column">文章</p>
+                    </div>
+                    <div>
+                        <p class="h5 num">{{businessCard.labelTotal}}</p>
+                        <p class="column">标签</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="h5 num">{{businessCard.labelTotal}}</p>
-                    <p class="column">标签</p>
-                </div>
+                <p class="contact">
+                    <a href="https://github.com/duhang666" target="_blank" title="交友网"><i class="iconfont icon-github"></i></a>
+                    <a href="tencent://message/?uin=840261937&Site=&Menu-=yes" title="企鹅"><i class="iconfont icon-qq"></i></a>
+                </p>
             </div>
-            <p class="contact">
-                <a href="https://github.com/duhang666" target="_blank" title="交友网"><i class="iconfont icon-github"></i></a>
-                <a href="tencent://message/?uin=840261937&Site=&Menu-=yes" title="企鹅"><i class="iconfont icon-qq"></i></a>
-            </p>
         </div>
     </div>
 

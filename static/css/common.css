@@ -1,7 +1,10 @@
 /*layout*/
+html, body {
+    font-size: 16px;
+}
+
 body {
     padding-top: 65px;
-    font-size: 15px;
     color: #555;
     font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Helvetica, Arial, Verdana, sans-serif;
 }
@@ -109,11 +112,11 @@ main .right_cont {
 
 .navbar-brand .logo {
     display: inline-block;
-    width: 70px;
+    width: 60px;
     height: 100%;
     background-repeat: no-repeat;
-    background-position: 15px center;
-    background-size: auto calc(100% - 30px);
+    background-position: 12px center;
+    background-size: auto 66%;
 }
 
 #tp-weather-widget {
@@ -121,13 +124,8 @@ main .right_cont {
     cursor: pointer;
 }
 
-#tp-weather-widget .tpwidget_title_hook, #tp-weather-widget .tpwidget_icon_hook, #tp-weather-widget .tpwidget_text_hook {
-    font-weight: normal;
-    color: #999;
-}
-
-#tp-weather-widget .tpwthwidt {
-    padding-left: 8px;
+#tp-weather-widget .sw-container  {
+    padding-left: 20px;
     border-left: 1px solid #eee;
 }
 

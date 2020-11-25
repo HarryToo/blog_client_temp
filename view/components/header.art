@@ -59,4 +59,8 @@
         hover: "enabled",
         container: "tp-weather-widget"
     });
+
+    $('#tp-weather-widget').click(function (e) {
+        e.preventDefault();
+    });
 </script>

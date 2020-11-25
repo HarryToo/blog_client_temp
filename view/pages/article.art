@@ -6,7 +6,7 @@
 <script src="https://cdn.staticfile.org/highlight.js/9.12.0/highlight.min.js"></script>
 <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.12.0/styles/atom-one-dark.min.css">
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <link rel="stylesheet" href="/css/article.css">
 {{/block}}
 
@@ -59,12 +59,13 @@
 
     function getTalkInit() {
         var gitalk = new Gitalk({
-            clientID: 'dcbd781903e19430a564',
-            clientSecret: '4912996fe281b96e727559e04164669709168ce8',
+            clientID: 'fce6c8e2a88b5956fe89',
+            clientSecret: 'acae5b7b1b0a56f63c96c29870d6597d1e9aef68',
             repo: 'blog_comments',
             owner: 'duhang666',
             admin: ['duhang666'],
-            id: '{{articleDetail.id}}'
+            id: '{{articleDetail.id}}',
+            distractionFreeMode: false
         });
         gitalk.render('gitalk-container');
     }

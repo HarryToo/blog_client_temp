@@ -30,13 +30,14 @@
 
     function getTalkInit() {
         var gitalk = new Gitalk({
-            clientID: 'dcbd781903e19430a564',
-            clientSecret: '4912996fe281b96e727559e04164669709168ce8',
+            clientID: 'fce6c8e2a88b5956fe89',
+            clientSecret: 'acae5b7b1b0a56f63c96c29870d6597d1e9aef68',
             repo: 'blog_comments',
             owner: 'duhang666',
             admin: ['duhang666'],
             id: '0',
-            title: '博客留言'
+            title: '博客留言',
+            distractionFreeMode: false
         });
         gitalk.render('gitalk-container');
     }

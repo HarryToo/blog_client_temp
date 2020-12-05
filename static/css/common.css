@@ -104,6 +104,8 @@ main .right_cont {
 .navbar-default {
     background: rgba(255, 255, 255, 0.94);
     border-color: #f5f5f5;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .navbar-brand {
@@ -124,7 +126,7 @@ main .right_cont {
     cursor: pointer;
 }
 
-#tp-weather-widget .sw-container  {
+#tp-weather-widget .sw-container {
     padding-left: 20px;
     border-left: 1px solid #eee;
 }
@@ -200,6 +202,10 @@ input.form-control, textarea.form-control {
     .form-group-sm .form-control {
         height: 38px;
     }
+
+    #tp-weather-widget .sw-container .sw-card-slim-container {
+        height: auto;
+    }
 }
 
 /*article_list*/
@@ -213,6 +219,8 @@ input.form-control, textarea.form-control {
     color: inherit;
     transition: 0.2s;
     overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .article_item:first-of-type {
@@ -259,7 +267,7 @@ input.form-control, textarea.form-control {
 
 .article_item article {
     height: 100%;
-    padding: 10px;
+    padding: 15px;
 }
 
 .article_item .cover {
@@ -318,6 +326,10 @@ input.form-control, textarea.form-control {
     .article_item {
         height: 106px;
     }
+
+    .article_item article {
+        padding: 10px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -345,8 +357,8 @@ input.form-control, textarea.form-control {
 }
 
 .side_bar > .column .column_header {
-    padding: 6px 10px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 15px;
     color: #fff;
     border-radius: 3px 3px 0 0;
     background-color: #41b883;

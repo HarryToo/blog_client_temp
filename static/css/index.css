@@ -40,22 +40,12 @@
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-    top: 0;
-    height: 25px;
+.swiper-pagination-progressbar {
+    background: rgba(0, 0, 0, 0.1);
 }
 
-.swiper-pagination-bullet {
-    height: 4px;
-    margin: 0 10px;
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.99);
-    transition: 0.2s;
-}
-
-.swiper-pagination-bullet-active {
-    width: 15px;
-    background-color: rgba(65, 184, 131, 0.95);
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: rgba(65, 184, 131, 0.92);
 }
 
 @media (max-width: 1025px) {
@@ -66,6 +56,13 @@
 
 @media (max-width: 991px) {
     .banner {
-        height: 240px;
+        height: 244px;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner .swiper-slide a header {
+        height: 36px;
+        line-height: 36px;
     }
 }

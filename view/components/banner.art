@@ -22,6 +22,7 @@
         },
         pagination: {
             el: '.swiper-pagination',
+            type: 'progressbar'
         }
     });
 </script>

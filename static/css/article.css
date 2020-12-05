@@ -31,7 +31,8 @@
 
 #article header .text .title {
     color: #4da47b;
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #article header .text .info {

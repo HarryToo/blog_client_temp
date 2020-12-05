@@ -10,7 +10,34 @@
 #about .about_cont {
     margin-bottom: 15px;
     padding: 15px;
-    line-height: 1.7em;
+}
+
+#about .content p {
+    line-height: 1.6em;
+}
+
+#about .content blockquote {
+    font-size: 16px;
+    border-radius: 4px;
+    border-left: 4px solid rgba(65, 184, 131, 0.5);
+    background-color: #f5f5f5;
+}
+
+#about .content blockquote p {
+    text-indent: 0;
+}
+
+#about .content img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+#about .content pre {
+    position: relative;
+    padding: 0;
+    font-size: 14px;
+    border-color: #eee;
+    word-wrap: normal;
 }
 
 #about .about_cont table {

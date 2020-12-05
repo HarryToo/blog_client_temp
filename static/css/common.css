@@ -266,7 +266,7 @@ input.form-control, textarea.form-control {
 }
 
 .article_item:hover {
-    border-left: 4px solid #41b883;
+    border-left: 5px solid #41b883;
     border-radius: 3px;
     transform-origin: center bottom;
     transform: scale(1.02);

@@ -9,12 +9,8 @@
 
 #about .about_cont {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 15px;
     line-height: 1.7em;
-}
-
-#about .about_cont p {
-    text-indent: 2em;
 }
 
 #about .about_cont table {
@@ -39,8 +35,12 @@
     box-sizing: border-box;
 }
 
+#about .about_cont > *:last-child {
+    margin-bottom: 0;
+}
+
 #about .comment {
-    padding: 10px;
+    padding: 0 15px 15px;
 }
 
 #about .gt-container .gt-meta {
@@ -60,6 +60,7 @@
 }
 
 #about .gt-container .gt-header-textarea {
+    min-height: 8em;
     resize: vertical !important;
     -webkit-appearance: none;
     outline: none;
@@ -94,6 +95,12 @@
     color: #999;
 }
 
+@media (max-width: 991px) {
+    #about .comment {
+        padding: 0 10px 10px;
+    }
+}
+
 @media (max-width: 767px) {
     #about .radius {
         border-radius: 0;
@@ -106,6 +113,7 @@
 
     #about .about_cont {
         margin-bottom: 0;
+        padding: 10px;
         border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
     }

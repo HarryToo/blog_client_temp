@@ -29,7 +29,7 @@
     <div class="translucent column top_article_list">
         <header class="column_header">推荐文章</header>
         {{each banner}}
-        <a href="/article?id={{$value.id}}" class="article_item">
+        <a href="/article?id={{$value.id}}" class="article_item" title="{{$value.title}}">
             <article class="text-overflow">
                 <span class="index">{{$index + 1}}.</span>
                 <span class="title">{{$value.title}}</span>

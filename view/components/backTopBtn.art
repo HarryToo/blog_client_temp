@@ -1,22 +1,52 @@
 <div class="radius flex-center-center" id="back_top_btn" title="返回顶部">
     <i class="iconfont icon-fanhuidingbu"></i>
     <script>
-        $('#back_top_btn').on('click', function () {
-            // $(document).scrollTop(0);
-            if ($('html').scrollTop()) {
-                $('html').animate({scrollTop: 0}, 400);
-                return false;
+        // 防抖
+        function debounce(fn, time) {
+            var timer;
+            return function () {
+                if (timer) {
+                    clearTimeout(timer);
+                    timer = null;
+                }
+                timer = setTimeout(fn, time);
             }
-            $('body').animate({scrollTop: 0}, 400);
+        }
+
+        // 节流
+        function throttle(fn, time) {
+            var timer;
+            return function () {
+                if (!timer) {
+                    timer = setTimeout(function () {
+                        fn();
+                        clearTimeout(timer);
+                        timer = null;
+                    }, time);
+                }
+            }
+        }
+
+        function backTopHandler() {
+            if ($('html').scrollTop()) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
             return false;
-        });
-        $(document).on('scroll', function () {
+        }
+
+        function scrollHandler() {
             var scrollTop = $(this).scrollTop();
-            if (scrollTop > 400) {
+            if (scrollTop > 500) {
                 $('#back_top_btn').addClass('reveal');
             } else {
                 $('#back_top_btn').removeClass('reveal');
             }
-        });
+        }
+
+        $('#back_top_btn').on('click', backTopHandler);
+        $(document).on('scroll', throttle(scrollHandler, 500));
     </script>
 </div>

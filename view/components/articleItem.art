@@ -1,6 +1,6 @@
 <a href="/article?id={{id}}" class="article_item translucent container-fluid">
     {{if label}}
-    <div class="text-overflow label_sign" title="{{label_name}}" style="background: {{label.color}}">{{label.name}}</div>
+    <div class="text-overflow label_sign" title="{{label.name}}" style="background: {{label.color}}">{{label.name}}</div>
     {{/if}}
     <article class="row">
         {{if cover.length}}

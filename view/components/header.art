@@ -33,7 +33,7 @@
             </ul>
             <form class="navbar-form navbar-right" action="/">
                 <div class="form-group form-group-sm">
-                    <input type="search" class="form-control" autocomplete="off" placeholder="回车搜索" name="searchVal" id="search_input">
+                    <input type="search" class="form-control" autocomplete="off" placeholder="搜索" name="searchVal" id="search_input">
                 </div>
             </form>
         </div>
@@ -41,13 +41,26 @@
 </nav>
 
 <script>
-    var pathName = location.pathname;
-    if ($('nav .navbar-nav li a[href="' + pathName + '"]').length) {
-        $('nav .navbar-nav li a[href="' + pathName + '"]').parent().addClass('active').siblings('li').removeClass('active');
-    }
-</script>
-<script>
-    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    (function (a, h, g, f, e, d, c, b) {
+        b = function () {
+            d = h.createElement(g);
+            c = h.getElementsByTagName(g)[0];
+            d.src = e;
+            d.charset = "utf-8";
+            d.async = 1;
+            c.parentNode.insertBefore(d, c)
+        };
+        a["SeniverseWeatherWidgetObject"] = f;
+        a[f] || (a[f] = function () {
+            (a[f].q = a[f].q || []).push(arguments)
+        });
+        a[f].l = +new Date();
+        if (a.attachEvent) {
+            a.attachEvent("onload", b)
+        } else {
+            a.addEventListener("load", b, false)
+        }
+    }(window, document, "script", "SeniverseWeatherWidget", "//cdn.sencdn.com/widget2/static/js/bundle.js?t=" + parseInt((new Date().getTime() / 100000000).toString(), 10)));
     window.SeniverseWeatherWidget('show', {
         flavor: "slim",
         location: "WM6JUTP55J51",
@@ -60,7 +73,16 @@
         container: "tp-weather-widget"
     });
 
+    var pathName = location.pathname;
+    if ($('nav .navbar-nav li a[href="' + pathName + '"]').length) {
+        $('nav .navbar-nav li a[href="' + pathName + '"]').parent().addClass('active').siblings('li').removeClass('active');
+    }
+
     $('#tp-weather-widget').click(function (e) {
         e.preventDefault();
+    });
+
+    $('.navbar-toggle').click(function () {
+        $('#page_mask').fadeToggle();
     });
 </script>

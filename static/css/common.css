@@ -296,6 +296,10 @@ input.form-control, textarea.form-control {
     background-size: contain;
 }
 
+.article_item .cover img {
+    display: none;
+}
+
 .article_item .cover .iconfont {
     color: #ddd;
     font-size: 50px;
@@ -352,7 +356,7 @@ input.form-control, textarea.form-control {
 
 @media (max-width: 767px) {
     .article_item {
-        height: 103px;
+        height: 102px;
         border-left: none;
         border-right: none;
         border-radius: 0 !important;
@@ -367,6 +371,14 @@ input.form-control, textarea.form-control {
         width: 4em;
         border-radius: 3px 0 3px 0;
     }
+
+    .article_item .cover {
+        width: 31%;
+    }
+
+    .article_item .text {
+        width: 69%;
+    }
 }
 
 /*side_bar*/
@@ -377,7 +389,7 @@ input.form-control, textarea.form-control {
 .side_bar > .column .column_header {
     padding: 10px;
     font-size: 15px;
-    color: #fff;
+    color: #b4b3b3;
     border-radius: 3px 3px 0 0;
     background-color: #41b883;
 }

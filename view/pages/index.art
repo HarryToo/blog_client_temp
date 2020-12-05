@@ -19,6 +19,17 @@
 
 {{if articleList.data && articleList.data.length}}
 <div class="article_list">
+    <script>
+        // render cover's theme color in article list
+        function articleItemCoverLoadHandler(imgDom) {
+            $(imgDom).parent('.cover').css('background-image', 'url("' + imgDom.src + '")');
+            var img = imgDom.src.replace('-articleListCover', '');
+            $.get(img + '?imageAve', function (res) {
+                var color = res.RGB.replace('0x', '#');
+                $(imgDom).parent('.cover').css('background-color', color);
+            });
+        }
+    </script>
     {{each articleList.data}}
     {{include '../components/articleItem' $value}}
     {{/each}}

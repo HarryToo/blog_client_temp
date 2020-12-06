@@ -45,12 +45,17 @@
     <title>{{block 'title'}}{{/block}} - 杜航个人博客</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_648952_f6d85vn4twd.css">
     <link rel="stylesheet" href="/css/reuse.css">
     <link rel="stylesheet" href="/css/common.css">
     <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/mouse.min.js"></script>
     <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://jrainlau.github.io/motto/motto.min.js"></script>
+    <!-- require APlayer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
     {{block 'head'}}{{/block}}
 </head>
 <body>
@@ -71,6 +76,8 @@
 </main>
 {{include './components/footer' individuation.footer_text}}
 {{include './components/backTopBtn'}}
+<!-- require live2d -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 <script>
     (function () {
         var bp = document.createElement('script');
@@ -83,6 +90,25 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
     })();
+
+    // live2d model type
+    localStorage.setItem('modelId', 2);
+
+    // mouse effects, music player
+    var isMobile = /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent);
+    if (!isMobile) {
+        if (screen.width > 1170) {
+            $.shuicheMouse({
+                type: [9, 10, 11][Math.floor(Math.random() * 3)],
+                color: "rgba(65,184,131,0.9)"
+            });
+        }
+        $('head').append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">');
+        var metingJs = document.createElement('script');
+        metingJs.type = 'text/javascript';
+        metingJs.src = 'https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js';
+        $('head').append(metingJs);
+    }
 
     $('#page_mask').click(function (e) {
         if ($('.navbar-collapse').hasClass('in')) {

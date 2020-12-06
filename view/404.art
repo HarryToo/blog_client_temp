@@ -5,7 +5,7 @@
 {{block 'main'}}
 <div class="empty">
     <i class="iconfont icon-icon-test animated rubberBand infinite"></i>
-    <h4>404</h4>
+    <h5 class="msg">{{message}}</h5>
     <p><a href="/">返回首页</a></p>
 </div>
 {{/block}}

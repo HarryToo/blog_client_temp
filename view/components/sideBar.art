@@ -1,7 +1,7 @@
 <div class="side_bar">
-    <div class="hidden-xs column business_card">
-        <header class="column_header">关于</header>
-        <div class="business_cont">
+    <div class="hidden-xs side_bar_item business_card">
+        <header class="side_bar_item_header">关于</header>
+        <div class="business_cont side_bar_item_cont">
             <div class="bg" style="background-image: url('{{businessCard.portrait}}')"></div>
             <a href="/about" class="portrait" title="关于" style="background-image: url('{{businessCard.portrait}}')"></a>
             <div class="cont translucent">
@@ -26,18 +26,29 @@
     </div>
 
     {{if banner.length}}
-    <div class="translucent column top_article_list">
-        <header class="column_header">推荐文章</header>
-        {{each banner}}
-        <a href="/article?id={{$value.id}}" class="article_item" title="{{$value.title}}">
-            <article class="text-overflow">
-                <span class="index">{{$index + 1}}.</span>
-                <span class="title">{{$value.title}}</span>
-            </article>
-        </a>
-        {{/each}}
+    <div class="translucent side_bar_item top_article_list">
+        <header class="side_bar_item_header">推荐文章</header>
+        <div class="side_bar_item_cont">
+            {{each banner}}
+            {{if $index < 5}}
+            <a href="/article?id={{$value.id}}" class="article_item" title="{{$value.title}}">
+                <article class="text-overflow">
+                    <span class="index">{{$index + 1}}.</span>
+                    <span class="title">{{$value.title}}</span>
+                </article>
+            </a>
+            {{/if}}
+            {{/each}}
+        </div>
     </div>
     {{/if}}
+
+    <div class="hidden-xs translucent side_bar_item music_player">
+        <header class="side_bar_item_header">我的歌单</header>
+        <div class="side_bar_item_cont">
+            <meting-js server="netease" type="playlist" id="625630544" theme="#41b883" volume="0.5" autoplay="true" listFolded="true" listMaxHeight="150px"></meting-js>
+        </div>
+    </div>
 
     <script>
         new Motto('.self_intro', {

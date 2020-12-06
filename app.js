@@ -22,6 +22,7 @@ app.use(async ctx => {
     if (ctx.status === 404) {
         let commonData = await getCommonData();
         await ctx.render('./404', {
+            message: '页面不存在',
             individuation: commonData.individuation,
             sideBar: commonData.sideBar,
         });

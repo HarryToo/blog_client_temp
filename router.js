@@ -101,11 +101,19 @@ router
         let id = ctx.query.id;
         await api.updateArticleHits({id});
         let articleDetail = await api.getArticleDetail({id});
-        await ctx.render('./pages/article', {
-            individuation: commonData.individuation,
-            sideBar: commonData.sideBar,
-            articleDetail
-        });
+        if (articleDetail.id) {
+            await ctx.render('./pages/article', {
+                individuation: commonData.individuation,
+                sideBar: commonData.sideBar,
+                articleDetail
+            });
+        } else {
+            await ctx.render('./404', {
+                message: '文章不存在或已删除',
+                individuation: commonData.individuation,
+                sideBar: commonData.sideBar
+            });
+        }
     });
 
 module.exports = {router, getCommonData};

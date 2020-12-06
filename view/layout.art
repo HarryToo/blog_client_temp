@@ -108,6 +108,39 @@
         metingJs.type = 'text/javascript';
         metingJs.src = 'https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js';
         $('head').append(metingJs);
+
+        if (screen.width > 1170) {
+            // music player progress
+            window.addEventListener('beforeunload', function (e) {
+                var ap = document.querySelector('meting-js').aplayer;
+                var musicIndex = ap.list.index;
+                var musicTime = ap.audio.currentTime;
+                var musicPaused = ap.audio.paused;
+                localStorage.setItem('music_index', musicIndex);
+                localStorage.setItem('music_time', musicTime);
+                localStorage.setItem('music_paused', musicPaused);
+            });
+
+            window.onload = function (e) {
+                if (localStorage.getItem('music_paused')) {
+                    document.querySelector('meting-js').setAttribute('autoplay', 'false');
+                    setTimeout(function () {
+                        var ap = document.querySelector('meting-js').aplayer;
+                        ap.list.switch(localStorage.getItem('music_index'));
+                        setTimeout(function () {
+                            ap.seek(Number(localStorage.getItem('music_time')));
+                            setTimeout(function () {
+                                if (localStorage.getItem('music_paused') === 'false') {
+                                    ap.play();
+                                } else {
+                                    ap.pause();
+                                }
+                            }, 10);
+                        }, 200);
+                    }, 800);
+                }
+            };
+        }
     }
 
     $('#page_mask').click(function (e) {

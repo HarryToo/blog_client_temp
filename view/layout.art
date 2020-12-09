@@ -105,14 +105,7 @@
                 type: [9, 10, 11][Math.floor(Math.random() * 3)],
                 color: "rgba(65,184,131,0.9)"
             });
-        }
-        // $('head').append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">');
-        // var metingJs = document.createElement('script');
-        // metingJs.type = 'text/javascript';
-        // metingJs.src = 'https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js';
-        // $('head').append(metingJs);
 
-        if (screen.width > 1170) {
             // music player progress
             window.addEventListener('beforeunload', function (e) {
                 var ap = document.querySelector('meting-js').aplayer;
@@ -123,12 +116,11 @@
                 localStorage.setItem('music_time', musicTime);
                 localStorage.setItem('music_paused', musicPaused);
             });
-
             window.addEventListener('metingjs_loaded', function (e) {
+                $('.music_player .side_bar_item_header').show();
+                var ap = document.querySelector('meting-js').aplayer;
                 if (localStorage.getItem('music_paused')) {
-                    var ap = document.querySelector('meting-js').aplayer;
                     setTimeout(function () {
-                        ap.pause();
                         ap.list.switch(localStorage.getItem('music_index'));
                         setTimeout(function () {
                             ap.seek(Number(localStorage.getItem('music_time')));
@@ -136,7 +128,11 @@
                                 ap.play();
                             }
                         }, 500);
-                    }, 300);
+                    }, 500);
+                } else {
+                    setTimeout(function () {
+                        ap.play();
+                    }, 500);
                 }
             });
         }

@@ -46,7 +46,7 @@
     <div class="hidden-xs translucent side_bar_item music_player">
         <header class="side_bar_item_header">我的歌单</header>
         <div class="side_bar_item_cont">
-            <meting-js server="netease" type="playlist" id="625630544" theme="#41b883" volume="0.5" autoplay="true" listFolded="true" listMaxHeight="150px"></meting-js>
+            <meting-js server="netease" type="playlist" id="625630544" theme="#41b883" volume="0.5" autoplay="false" listFolded="true" listMaxHeight="150px"></meting-js>
         </div>
     </div>
 

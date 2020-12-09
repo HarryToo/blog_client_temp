@@ -528,6 +528,10 @@ input.form-control, textarea.form-control {
     color: #ffa538;
 }
 
+.music_player .side_bar_item_header {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .side_bar > .side_bar_item .side_bar_item_header {
         padding: 10px;

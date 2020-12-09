@@ -78,7 +78,7 @@
     padding: 15px;
 }
 
-#article .content p {
+#article .content p, #article .content li {
     line-height: 1.6em;
 }
 

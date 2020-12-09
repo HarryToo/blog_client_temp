@@ -12,7 +12,7 @@
     padding: 15px;
 }
 
-#about .content p {
+#about .content p, #about .content li {
     line-height: 1.6em;
 }
 

@@ -56,6 +56,9 @@
     <!-- require APlayer -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <!-- require APlayer plugin MetingJs -->
+    <!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>-->
+    <script type="text/javascript" src="/js/meting.js"></script>
     {{block 'head'}}{{/block}}
 </head>
 <body>
@@ -103,11 +106,11 @@
                 color: "rgba(65,184,131,0.9)"
             });
         }
-        $('head').append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">');
-        var metingJs = document.createElement('script');
-        metingJs.type = 'text/javascript';
-        metingJs.src = 'https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js';
-        $('head').append(metingJs);
+        // $('head').append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">');
+        // var metingJs = document.createElement('script');
+        // metingJs.type = 'text/javascript';
+        // metingJs.src = 'https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js';
+        // $('head').append(metingJs);
 
         if (screen.width > 1170) {
             // music player progress
@@ -121,25 +124,21 @@
                 localStorage.setItem('music_paused', musicPaused);
             });
 
-            window.onload = function (e) {
+            window.addEventListener('metingjs_loaded', function (e) {
                 if (localStorage.getItem('music_paused')) {
-                    document.querySelector('meting-js').setAttribute('autoplay', 'false');
+                    var ap = document.querySelector('meting-js').aplayer;
                     setTimeout(function () {
-                        var ap = document.querySelector('meting-js').aplayer;
+                        ap.pause();
                         ap.list.switch(localStorage.getItem('music_index'));
                         setTimeout(function () {
                             ap.seek(Number(localStorage.getItem('music_time')));
-                            setTimeout(function () {
-                                if (localStorage.getItem('music_paused') === 'false') {
-                                    ap.play();
-                                } else {
-                                    ap.pause();
-                                }
-                            }, 10);
-                        }, 200);
-                    }, 800);
+                            if (localStorage.getItem('music_paused') === 'false') {
+                                ap.play();
+                            }
+                        }, 500);
+                    }, 300);
                 }
-            };
+            });
         }
     }
 

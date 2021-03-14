@@ -609,9 +609,9 @@ footer span {
 
 /*live2d*/
 #waifu {
-    bottom: 82px !important;
+    bottom: 80px !important;
     left: auto !important;
-    right: calc((100vw - 1170px) / 2 + 15px);
+    right: calc((100vw - 1170px) / 2 - 240px - 15px);
 }
 
 #waifu-tips {
